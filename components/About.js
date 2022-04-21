@@ -7,7 +7,7 @@ function About() {
             <div className="card-content">
                 <div className="card-subtitle">About</div>
                 <div className="card-desc">
-                    <p>Hi, I&apos;m a front-end web developer. I covert designs into the code. These are tools for my daily work.</p><br />
+                    <p>👋 Hi, I&apos;m a front-end web developer. I covert designs into the code. These tools are using for my daily work.</p><br />
                     <p>HTML, CSS, Javascript, SASS, VS Code, Terminal
                         JS task runners(Gulp, grunt), Bundling tools(webpack, Parcel), Vite</p>
                 </div>

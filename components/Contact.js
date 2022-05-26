@@ -23,7 +23,7 @@ function Contact() {
                         <div className="icon">
                             <Image src="/phone.svg" alt="phone number" width="24" height="24" />
                         </div>
-                        <div className="text">+94 77 58 59 642</div>
+                        <div className="text">+94 71 0 646 244</div>
                     </div>
                 </div>
             </div>

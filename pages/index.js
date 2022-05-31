@@ -35,7 +35,7 @@ export default function Home() {
                 <Image src="/man.png" alt="avatar" width="64" height="64" />
               </div>
               <h3>Kasun Lakshitha</h3>
-              <h6>UI developer</h6>
+              <h6>Frontend web developer</h6>
             </div>
           </div>
           <div className="card-main">

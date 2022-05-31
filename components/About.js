@@ -8,10 +8,12 @@ function About() {
             <div className="card-content">
                 <div className="card-subtitle">About</div>
                 <div className="card-desc">
-                    <p>👋 Hi, I&apos;m a front-end web developer. I do covert UI designs and business ideas into the code. Wrapping logic with the cool colors and animations. Almost 2 years experience working from home 100% of the time.</p><br />
+                    <p>👋 Hi, I&apos;m an Enthusiastic Frontend Developer who loves to create beautiful user interfaces. I'm glad I decided to learn to program. It's taught me how to become resourceful and think outside the box. I've been able to accomplish many things I thought were impossible.</p><br />
                     <p>
-                        <strong>Languages, tools and framesworks: </strong>HTML, CSS, Javascript, SASS, VS Code, React JS, Angular JS, Terminal, JS task runners(Gulp, grunt), Bundling tools(webpack, Parcel), Vite
-                    </p>
+                        <strong>Skills & Tools: </strong>HTML, CSS, Javascript, Jquery, SASS, React JS, Bootstrap, Bulma, TailwindCSS, VS Code, Terminal, Gulp, Grunt, Webpack, Vite, git,  etc.
+                    </p><br />
+                    <p>I love to level up my skills!</p>
+
                 </div>
             </div>
             <div className="card-social">

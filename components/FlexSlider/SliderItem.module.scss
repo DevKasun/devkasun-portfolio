@@ -14,6 +14,34 @@
 	h3,
 	p {
 		color: #fff;
+		padding-bottom: 20px;
+		@media only screen and (min-width: 1280px) {
+			padding-bottom: 40px;
+		}
+	}
+	p {
+		padding-bottom: 20px;
+	}
+	a {
+		font-size: 24px;
+		border: 1px solid transparent;
+		text-decoration: underline;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: #fff;
+		width: 130px;
+		height: 50px;
+		margin-left: -16px;
+		transition: all 400ms ease-in;
+		&:hover {
+			font-size: 25px;
+			border: 1px solid #fff;
+			background-color: #fff;
+			text-decoration: none;
+			color: #000;
+			margin-left: 0;
+		}
 	}
 
 	&:before {
@@ -98,7 +126,6 @@
 	display: grid;
 	grid-auto-flow: row;
 	grid-template-columns: 1fr;
-	grid-row-gap: 20px;
 	align-items: flex-end;
 	left: 0;
 	bottom: 0;
@@ -114,7 +141,6 @@
 
 	@media only screen and (min-width: 1280px) {
 		grid-template-columns: 460px;
-		grid-row-gap: 40px;
 		padding: 40px;
 	}
 

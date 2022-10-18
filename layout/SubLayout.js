@@ -1,4 +1,5 @@
 import React from 'react';
+import Breadcrumb from '../components/breadcrumb/Breadcrumb';
 import classes from './SubLayout.module.scss';
 
 const SubLayout = ({ children }) => {

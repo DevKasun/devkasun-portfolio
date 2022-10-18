@@ -1,0 +1,56 @@
+.title {
+	font-size: 2.25rem;
+	padding: 1em 0;
+}
+
+.contactDetailsList {
+	li {
+		display: flex;
+		align-items: center;
+		margin-bottom: 2em;
+
+		span {
+			margin-right: 2em;
+		}
+
+		p {
+			font-size: 1.875rem;
+			padding-bottom: 0;
+		}
+	}
+}
+
+@media screen and (max-width: 1200px) {
+	.contactDetailsList {
+		li {
+			span {
+				max-width: 32px;
+				max-height: 32px;
+			}
+			p {
+				font-size: 1.5rem;
+			}
+		}
+	}
+	.title {
+		font-size: 2rem;
+		padding: 0.7em 0;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.contactDetailsList {
+		li {
+			margin-bottom: 1.25em;
+			span {
+				margin-right: 1em;
+			}
+			p {
+				font-size: 1.125rem;
+			}
+		}
+	}
+	.title {
+		font-size: 1.25rem;
+	}
+}

@@ -1,4 +1,4 @@
-.aboutPage {
+.contactPage {
 	position: relative;
 	display: flex;
 	flex-flow: row;
@@ -7,12 +7,7 @@
 
 	h3 {
 		font-size: 44px;
-	}
-	h5 {
-		font-size: 18px;
-		padding-bottom: 2em;
-		text-transform: uppercase;
-		font-weight: normal;
+		padding-bottom: 1em;
 	}
 	p {
 		font-size: 20px;
@@ -28,7 +23,7 @@
 }
 
 .textContetn,
-.imageContent {
+.contact {
 	display: flex;
 	padding: 4em;
 	z-index: 1;
@@ -38,7 +33,7 @@
 	flex: 3;
 	flex-direction: column;
 	justify-content: flex-start;
-	background-image: url('../../public/assets/gallery-image-traveler.png');
+	background-image: url('../../public/assets/experience.png');
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
@@ -58,18 +53,17 @@
 	}
 }
 
-.imageContent {
+.contact {
 	flex: 9;
 	padding: 0;
-	align-items: flex-start;
+	align-items: center;
 	justify-content: center;
-	max-height: 100vh;
-	overflow-y: auto;
-	scroll-behavior: smooth;
+	flex-direction: column;
+	padding: 1em;
 }
 
 @media screen and (max-width: 1200px) {
-	.aboutPage {
+	.contactPage {
 		h3 {
 			font-size: 24px;
 		}
@@ -86,24 +80,17 @@
 	}
 }
 @media screen and (max-width: 900px) {
-	.aboutPage {
+	.contactPage {
 		flex-direction: column;
-	}
-	.textContetn,
-	.imageContent {
-		flex: 1;
-		padding: 2em 1em;
+		max-height: initial;
 	}
 	.textContetn {
-		padding-top: 4em;
+		flex: 1;
+		padding: 4em 1em;
 	}
-	.imageContent {
-		padding: 0;
-	}
-}
-
-@media screen and (max-width: 600px) {
-	.imageContent {
-		overflow-y: visible;
+	.contact {
+		padding: 1em;
+		align-items: flex-start;
+		justify-content: flex-start;
 	}
 }

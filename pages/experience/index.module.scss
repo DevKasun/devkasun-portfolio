@@ -1,4 +1,4 @@
-.aboutPage {
+.experiencePage {
 	position: relative;
 	display: flex;
 	flex-flow: row;
@@ -7,12 +7,7 @@
 
 	h3 {
 		font-size: 44px;
-	}
-	h5 {
-		font-size: 18px;
-		padding-bottom: 2em;
-		text-transform: uppercase;
-		font-weight: normal;
+		padding-bottom: 1em;
 	}
 	p {
 		font-size: 20px;
@@ -28,7 +23,7 @@
 }
 
 .textContetn,
-.imageContent {
+.timeLine {
 	display: flex;
 	padding: 4em;
 	z-index: 1;
@@ -38,7 +33,7 @@
 	flex: 3;
 	flex-direction: column;
 	justify-content: flex-start;
-	background-image: url('../../public/assets/gallery-image-traveler.png');
+	background-image: url('../../public/assets/experience.png');
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
@@ -58,10 +53,10 @@
 	}
 }
 
-.imageContent {
+.timeLine {
 	flex: 9;
 	padding: 0;
-	align-items: flex-start;
+	align-items: center;
 	justify-content: center;
 	max-height: 100vh;
 	overflow-y: auto;
@@ -69,7 +64,7 @@
 }
 
 @media screen and (max-width: 1200px) {
-	.aboutPage {
+	.experiencePage {
 		h3 {
 			font-size: 24px;
 		}
@@ -86,24 +81,25 @@
 	}
 }
 @media screen and (max-width: 900px) {
-	.aboutPage {
+	.experiencePage {
 		flex-direction: column;
+		max-height: initial;
 	}
 	.textContetn,
-	.imageContent {
+	.timeLine {
 		flex: 1;
 		padding: 2em 1em;
 	}
 	.textContetn {
 		padding-top: 4em;
 	}
-	.imageContent {
+	.timeLine {
 		padding: 0;
 	}
 }
 
 @media screen and (max-width: 600px) {
-	.imageContent {
+	.timeLine {
 		overflow-y: visible;
 	}
 }

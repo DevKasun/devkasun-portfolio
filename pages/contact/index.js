@@ -1,5 +1,5 @@
 import React from 'react';
-import Breadcrumb from '../../components/breadcrumb/Breadcrumb';
+import Breadcrumb from '../../components/Breadcrumb/Breadcrumb';
 import ContactDetails from '../../components/ContactDetails/ContactDetails';
 import SubLayout from '../../layout/SubLayout';
 import classes from './index.module.scss';

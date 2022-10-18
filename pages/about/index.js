@@ -1,5 +1,5 @@
 import React from 'react';
-import Breadcrumb from '../../components/breadcrumb/Breadcrumb';
+import Breadcrumb from '../../components/Breadcrumb/Breadcrumb';
 import MasonaryGallery from '../../components/MasonaryGallery/MasonaryGallery';
 import SubLayout from '../../layout/SubLayout';
 import classes from './index.module.scss';

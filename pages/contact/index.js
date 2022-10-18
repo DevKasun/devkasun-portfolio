@@ -1,4 +1,5 @@
 import React from 'react';
+import Breadcrumb from '../../components/breadcrumb/Breadcrumb';
 import ContactDetails from '../../components/ContactDetails/ContactDetails';
 import SubLayout from '../../layout/SubLayout';
 import classes from './index.module.scss';
@@ -7,6 +8,7 @@ const index = () => {
     return (
         <SubLayout>
             <section className={classes.contactPage}>
+                <Breadcrumb />
                 <div className={classes.textContetn}>
                     <div className={classes.contentWrapper}>
                         <h3>Contact</h3>

@@ -1,4 +1,5 @@
 import React from 'react';
+import Breadcrumb from '../../components/breadcrumb/Breadcrumb';
 import TimeLine from '../../components/TimeLine/TimeLine';
 import SubLayout from '../../layout/SubLayout';
 import classes from './index.module.scss';
@@ -7,6 +8,7 @@ const index = () => {
     return (
         <SubLayout>
             <section className={classes.experiencePage}>
+                <Breadcrumb />
                 <div className={classes.textContetn}>
                     <div className={classes.contentWrapper}>
                         <h3>Experiece</h3>

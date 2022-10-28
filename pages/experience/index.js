@@ -12,7 +12,7 @@ const index = () => {
                 <div className={classes.textContetn}>
                     <div className={classes.contentWrapper}>
                         <h3>Experiece</h3>
-                        <p>Almost 2 years of experience working from home 100% of the time. Some of my most vital skills are communication, problem-solving, and the ability to receive feedback and improve upon it.</p>
+                        <p>As a front-end web developer, I have more than 6 years of experience. Almost two years of experience working from home. Communication, problem-solving, and receiving feedback and improving on it are some of my most vital skills.</p>
                     </div>
                 </div>
                 <div className={classes.timeLine}>

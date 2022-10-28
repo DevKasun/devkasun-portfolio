@@ -15,7 +15,7 @@ const data = [
     {
         id: 2,
         title: "Experience",
-        description: "Over the past two years, I have worked from home 100% of the time. The ability to communicate, solve problems, and receive feedback are some of my most vital skills.",
+        description: "As a front-end web developer, I have more than 6 years of experience. Almost two years of experience working from home. Communication, problem-solving, and receiving feedback and improving on it are some of my most vital skills.",
         image: "https://devkasun-portfolio.s3.ap-south-1.amazonaws.com/images/me1.png",
         url: "/experience"
     },

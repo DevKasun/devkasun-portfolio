@@ -4,10 +4,6 @@ import classes from './Post.module.scss';
 
 const Post = (props) => {
 
-    console.log(props.recentPost);
-
-    const featuredPosts = props.recentPost.slice();
-
     return (
         <>
             {

@@ -1,10 +1,31 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Breadcrumb from '../../components/Breadcrumb/Breadcrumb';
 import SubLayout from '../../layout/SubLayout';
 import classes from './index.module.scss';
+import GhostContentAPI from '@tryghost/content-api'
+import Post from './Post';
 
-const index = () => {
+const Blog = () => {
+
+    const [recentPost, setRecentPost] = useState([]);
+
+    useEffect(() => {
+        const api = new GhostContentAPI({
+            url: 'https://css-blok.com',
+            key: '0fd88efdfedaac94f109a82ea6',
+            version: "v5.0"
+        });
+
+        api.posts.browse({ featured: true })
+            .then((posts) => {
+                setRecentPost(posts);
+            })
+            .catch((err) => {
+                console.error(err);
+            });
+    }, [])
+
     return (
         <SubLayout>
             <section className={classes.blogPage}>
@@ -16,12 +37,15 @@ const index = () => {
                         <p>My blog website link: <Link href="https://css-blok.com"><a target="_blank">CSS-BLOK</a></Link></p>
                     </div>
                 </div>
-                <div className={classes.blogImage}>
+                <div className={classes.blogPosts}>
                     {/* TODO: Add a image of the blog */}
+                    <div className={classes.allPosts}>
+                        <Post recentPost={recentPost} />
+                    </div>
                 </div>
             </section>
         </SubLayout>
     )
 }
 
-export default index;
+export default Blog;

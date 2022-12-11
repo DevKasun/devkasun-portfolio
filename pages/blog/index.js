@@ -4,7 +4,6 @@ import Breadcrumb from '../../components/Breadcrumb/Breadcrumb';
 import SubLayout from '../../layout/SubLayout';
 import classes from './index.module.scss';
 import GhostContentAPI from '@tryghost/content-api'
-import Post from './Post';
 
 const Blog = () => {
 
@@ -38,9 +37,21 @@ const Blog = () => {
                     </div>
                 </div>
                 <div className={classes.blogPosts}>
-                    {/* TODO: Add a image of the blog */}
                     <div className={classes.allPosts}>
-                        <Post recentPost={recentPost} />
+                        {
+                            recentPost.map(post => {
+                                return (
+                                    <div className={classes.postWrapper} key={post.id}>
+                                        <Link className={classes.postLink} href={post.url} target="_blank">
+                                            <a className={classes.link}>
+                                                <h4 className={classes.postTitle}>{post.title}</h4>
+                                                <p className={classes.postContent}>{post.excerpt}</p>
+                                            </a>
+                                        </Link>
+                                    </div>
+                                )
+                            })
+                        }
                     </div>
                 </div>
             </section>

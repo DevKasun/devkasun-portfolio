@@ -1,10 +1,30 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Breadcrumb from '../../components/Breadcrumb/Breadcrumb';
 import SubLayout from '../../layout/SubLayout';
 import classes from './index.module.scss';
+import GhostContentAPI from '@tryghost/content-api'
 
-const index = () => {
+const Blog = () => {
+
+    const [recentPost, setRecentPost] = useState([]);
+
+    useEffect(() => {
+        const api = new GhostContentAPI({
+            url: 'https://css-blok.com',
+            key: '0fd88efdfedaac94f109a82ea6',
+            version: "v5.0"
+        });
+
+        api.posts.browse({ featured: true })
+            .then((posts) => {
+                setRecentPost(posts);
+            })
+            .catch((err) => {
+                console.error(err);
+            });
+    }, [])
+
     return (
         <SubLayout>
             <section className={classes.blogPage}>
@@ -16,12 +36,27 @@ const index = () => {
                         <p>My blog website link: <Link href="https://css-blok.com"><a target="_blank">CSS-BLOK</a></Link></p>
                     </div>
                 </div>
-                <div className={classes.blogImage}>
-                    {/* TODO: Add a image of the blog */}
+                <div className={classes.blogPosts}>
+                    <div className={classes.allPosts}>
+                        {
+                            recentPost.map(post => {
+                                return (
+                                    <div className={classes.postWrapper} key={post.id}>
+                                        <Link className={classes.postLink} href={post.url} target="_blank">
+                                            <a className={classes.link}>
+                                                <h4 className={classes.postTitle}>{post.title}</h4>
+                                                <p className={classes.postContent}>{post.excerpt}</p>
+                                            </a>
+                                        </Link>
+                                    </div>
+                                )
+                            })
+                        }
+                    </div>
                 </div>
             </section>
         </SubLayout>
     )
 }
 
-export default index;
+export default Blog;

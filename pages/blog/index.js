@@ -11,9 +11,9 @@ const Blog = () => {
 
     useEffect(() => {
         const api = new GhostContentAPI({
-            url: 'https://css-blok.com',
-            key: '0fd88efdfedaac94f109a82ea6',
-            version: "v5.0"
+            url: process.env.GHOST_API_URL,
+            key: process.env.GHOST_API_KEY,
+            version: process.env.GHOST_API_VERSION
         });
 
         api.posts.browse({ featured: true })

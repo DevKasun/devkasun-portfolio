@@ -21,7 +21,7 @@ const data = [
     },
     {
         id: 3,
-        title: "Blog",
+        title: "Blog and Vlog",
         description: "It would be my pleasure to share my working experience and knowledge of web development with you. Specially Front-end web development. Front-end web development is not an easy task nowadays.",
         image: "https://devkasun-portfolio.s3.ap-south-1.amazonaws.com/images/developer.png",
         url: "/blog"

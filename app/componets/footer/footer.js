@@ -11,7 +11,12 @@ export default function Footer() {
         <footer className="fixed bottom-0 w-full py-4">
             <div className="container mx-auto flex items-center justify-between">
                 <ul>
-                    <li><Link href="mailto:devkasunlakshitha@gmail.com" class="text-kgray px-2">devkasunlakshitha@gmail.com</Link></li>
+                    <li>
+                        <Link href="mailto:devkasunlakshitha@gmail.com" class="text-kgray px-2 flex gap-1">
+                            <Image width={20} height={20} src={'icons/at-sign.svg'} alt="at-sign" />
+                            devkasunlakshitha@gmail.com
+                        </Link>
+                    </li>
                 </ul>
                 <nav>
                     <ul className="flex">

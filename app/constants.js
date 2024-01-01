@@ -1,0 +1,20 @@
+export const skills = [
+    'HTML',
+    'CSS',
+    'JavaScript',
+    'jQuery',
+    'SASS',
+    'React JS',
+    'Next JS',
+    'Bootstrap',
+    'Bulma',
+    'Tailwind CSS',
+    'VS Code',
+    'Terminal',
+    'Gulp',
+    'Grunt',
+    'Webpack',
+    'Vite',
+    'Git',
+    'WordPress'
+];

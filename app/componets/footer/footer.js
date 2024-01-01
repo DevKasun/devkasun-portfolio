@@ -8,11 +8,11 @@ import React from 'react';
 export default function Footer() {
     const pathname = usePathname();
     return (
-        <footer className="fixed bottom-0 w-full py-4">
-            <div className="container mx-auto flex items-center justify-between">
+        <footer className="fixed bottom-0 w-full py-4 bg-kblack">
+            <div className="container mx-auto px-8 flex items-center justify-between">
                 <ul>
                     <li>
-                        <Link href="mailto:devkasunlakshitha@gmail.com" class="text-kgray px-2 flex gap-1">
+                        <Link href="mailto:devkasunlakshitha@gmail.com" className="text-kgray px-2 flex gap-1 hover:text-kwhite">
                             <Image width={20} height={20} src={'icons/at-sign.svg'} alt="at-sign" />
                             devkasunlakshitha@gmail.com
                         </Link>
@@ -21,16 +21,16 @@ export default function Footer() {
                 <nav>
                     <ul className="flex">
                         <li>
-                            <Link className={`link block px-2 text-xl duration-300 hover:underline ${pathname === '/' ? 'active text-kwhite' : 'text-kgray'}`} href="/">Home</Link>
+                            <Link className={`link block px-2 text-xl duration-300 hover:text-kwhite ${pathname === '/' ? 'active text-kwhite' : 'text-kgray'}`} href="/">Home</Link>
                         </li>
                         <li>
-                            <Link className={`link block px-2 text-xl duration-300 hover:underline ${pathname === '/about-me' ? 'active text-kwhite' : 'text-kgray'}`} href="/about-me">About</Link>
+                            <Link className={`link block px-2 text-xl duration-300 hover:text-kwhite ${pathname === '/about-me' ? 'active text-kwhite' : 'text-kgray'}`} href="/about-me">About</Link>
                         </li>
                         <li>
-                            <Link className={`link block px-2 text-xl duration-300 hover:underline ${pathname === '/blog' ? 'active text-kwhite' : 'text-kgray'}`} href="/blog">Blog</Link>
+                            <Link className={`link block px-2 text-xl duration-300 hover:text-kwhite ${pathname === '/blog' ? 'active text-kwhite' : 'text-kgray'}`} href="/blog">Blog</Link>
                         </li>
                         <li>
-                            <Link className={`link block px-2 text-xl duration-300 hover:underline ${pathname === '/contact' ? 'active text-kwhite' : 'text-kgray'}`} href="/contact">Contact</Link>
+                            <Link className={`link block px-2 text-xl duration-300 hover:text-kwhite ${pathname === '/contact' ? 'active text-kwhite' : 'text-kgray'}`} href="/contact">Contact</Link>
                         </li>
                     </ul>
                 </nav>

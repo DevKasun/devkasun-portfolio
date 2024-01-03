@@ -18,3 +18,34 @@ export const skills = [
     'Git',
     'WordPress'
 ];
+
+export const sevenSignsSkills = [
+    'Front-End Development',
+    'WordPress',
+    'Wordpress Development',
+    'PSD to Wordpress',
+    'Linux',
+    'jQuery',
+    'SQL',
+    'MySQL',
+    'Bootstrap',
+    'SASS',
+    'Vue.js'
+];
+
+export const RhinoPartnersSkills = [
+    'Next.js',
+    'React.js',
+    'Front-End Development',
+    'Tailwind CSS',
+    'Redux.js',
+    'WordPress',
+    'Wordpress Development',
+    'Laravel',
+    'Linux',
+    'jQuery',
+    'SQL',
+    'MySQL',
+    'Bootstrap',
+    'SASS'
+];

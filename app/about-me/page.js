@@ -9,7 +9,7 @@ export default function About() {
         <main className='about py-28'>
             <section className='pb-14'>
                 <div className="container mx-auto px-8">
-                    <div className='block gap-8 pb-8 flex-col-reverse sm:flex lg:flex-col-reverse lg:grid sm:grid-cols-1 lg:grid-cols-3'>
+                    <div className='flex flex-col-reverse gap-8 pb-8 lg:grid lg:grid-cols-3'>
                         <Image src={'/images/developer.png'} width={1080} height={1080} alt="developer_image" />
                         <div className='col-span-2'>
                             <h2 className='text-4xl pb-6'>Who am I?</h2>

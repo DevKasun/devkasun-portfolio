@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground: #FFFFFF;
+  --foreground-secondary:  #525252;
+  --background: #020202;
+  --font-poppins: "Poppins", sans-serif;
+}
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+} */
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--font-poppins);
+  font-weight: 400;
+}
+
+main {
+  min-height: calc(100% - 124px);
+}

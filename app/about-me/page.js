@@ -10,7 +10,7 @@ export default function About() {
             <section className='pb-14'>
                 <div className="container mx-auto px-8">
                     <div className='flex flex-col-reverse gap-8 pb-8 lg:grid lg:grid-cols-3'>
-                        <Image src={'/images/developer.png'} width={1080} height={1080} alt="developer_image" />
+                        <Image src={'/images/devkasun-color.png'} width={1080} height={1080} alt="developer_image" />
                         <div className='col-span-2'>
                             <h2 className='text-4xl pb-6'>Who am I?</h2>
                             <p className='text-lg pb-4'>

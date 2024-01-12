@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import React from 'react';
+import SocialMedia from '../social-media/socialMedia';
 
 export default function Footer() {
     const pathname = usePathname();
@@ -12,7 +13,7 @@ export default function Footer() {
             <div className="container mx-auto px-8 flex items-center justify-between">
                 <ul>
                     <li>
-                        <Link href="mailto:devkasunlakshitha@gmail.com" className="text-kgray px-2 flex gap-1 hover:text-kwhite">
+                        <Link href="mailto:devkasunlakshitha@gmail.com" className="text-kwhite px-2 flex gap-1 hover:text-kwhite">
                             <Image width={20} height={20} src={'icons/at-sign.svg'} alt="at-sign" />
                             devkasunlakshitha@gmail.com
                         </Link>
@@ -34,28 +35,7 @@ export default function Footer() {
                         </li>
                     </ul>
                 </nav>
-                <ul className='social-media flex items-center'>
-                    <li>
-                        <Link target='_blank' href='' className='block px-2 cursor-pointer hover:scale-125 duration-300'>
-                            <Image width={24} height={24} src={'icons/twitter.svg'} alt='twitter_link' />
-                        </Link>
-                    </li>
-                    <li>
-                        <Link target='_blank' href='' className='block px-2 cursor-pointer hover:scale-125 duration-300'>
-                            <Image width={24} height={24} src={'icons/linkedin.svg'} alt='linkedin_link' />
-                        </Link>
-                    </li>
-                    <li>
-                        <Link target='_blank' href='' className='block px-2 cursor-pointer hover:scale-125 duration-300'>
-                            <Image width={24} height={24} src={'icons/instagram.svg'} alt='instagram_link' />
-                        </Link>
-                    </li>
-                    <li>
-                        <Link target='_blank' href='' className='block px-2 cursor-pointer hover:scale-125 duration-300'>
-                            <Image width={24} height={24} src={'icons/facebook.svg'} alt='facebook_link' />
-                        </Link>
-                    </li>
-                </ul>
+                <SocialMedia />
             </div>
         </footer>
     )

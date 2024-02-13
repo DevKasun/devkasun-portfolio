@@ -1,0 +1,44 @@
+---
+import { Image } from 'astro:assets';
+import FooterLink from './FooterLink.astro';
+import atSignIcon from '../../public/icons/at-sign.svg';
+---
+
+<footer class='fixed bottom-0 w-full py-4 bg-kblack'>
+	<div class='container mx-auto px-8 flex items-center justify-between'>
+		<ul>
+			<li>
+				<FooterLink
+					class='text-kwhite px-2 flex gap-1 hover:text-kwhite'
+				>
+					<span class='flex items-center px-2 gap-1'>
+						<Image
+							width={20}
+							height={20}
+							src={atSignIcon}
+							alt='at-sign'
+						/>
+						devkasunlakshitha@gmail.com</span
+					>
+				</FooterLink>
+			</li>
+		</ul>
+		<nav>
+			<ul class='flex'>
+				<li>
+					<FooterLink href='/'>Home</FooterLink>
+				</li>
+				<li>
+					<FooterLink href='/about'>About</FooterLink>
+				</li>
+				<li>
+					<FooterLink href='/blog'>Blog</FooterLink>
+				</li>
+				<li>
+					<FooterLink href='/contact'>Contact</FooterLink>
+				</li>
+			</ul>
+		</nav>
+		<!-- <SocialMedia /> -->
+	</div>
+</footer>

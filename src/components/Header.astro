@@ -1,0 +1,13 @@
+---
+import { Image } from 'astro:assets';
+import menuIcon from '../../public/icons/menu.svg';
+---
+
+<header class='fixed top-0 w-full h-fit py-4 bg-kblack'>
+	<div class='container mx-auto px-8 flex items-center justify-between'>
+		<a href='/' class='text-2xl'>DevKasun</a>
+		<button>
+			<Image src={menuIcon} width='24' height='24' alt='menu_icons' />
+		</button>
+	</div>
+</header>

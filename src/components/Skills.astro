@@ -1,0 +1,16 @@
+---
+interface SkillsProps {
+	skills: String[];
+}
+const { skills } = Astro.props as SkillsProps;
+---
+
+<div class='flex flex-wrap'>
+	{
+		skills.map((skill) => (
+			<span class='p-1 m-1 bg-kwhite text-kblack rounded-md cursor-pointer duration-300 hover:text-kwhite hover:bg-kblack'>
+				{skill}
+			</span>
+		))
+	}
+</div>

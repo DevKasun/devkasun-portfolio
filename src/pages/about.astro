@@ -1,62 +1,77 @@
 ---
-import Layout from '../layouts/BlogPost.astro';
+import PageLayout from '../layouts/PageLayout.astro';
+import { ABOUT_SITE_TITLE, ABOUT_SITE_DESCRIPTION } from '../consts';
+import { Image } from 'astro:assets';
+import devkasunColorProfile from '../assets/images/devkasun-color.png';
+import Skills from '../components/Skills.astro';
+import { skills, sevenSignsSkills, RhinoPartnersSkills } from '../consts';
 ---
 
-<Layout
-	title="About Me"
-	description="Lorem ipsum dolor sit amet"
-	pubDate={new Date('August 08 2021')}
-	heroImage="/blog-placeholder-about.jpg"
->
-	<p>
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-		labore et dolore magna aliqua. Vitae ultricies leo integer malesuada nunc vel risus commodo
-		viverra. Adipiscing enim eu turpis egestas pretium. Euismod elementum nisi quis eleifend quam
-		adipiscing. In hac habitasse platea dictumst vestibulum. Sagittis purus sit amet volutpat. Netus
-		et malesuada fames ac turpis egestas. Eget magna fermentum iaculis eu non diam phasellus
-		vestibulum lorem. Varius sit amet mattis vulputate enim. Habitasse platea dictumst quisque
-		sagittis. Integer quis auctor elit sed vulputate mi. Dictumst quisque sagittis purus sit amet.
-	</p>
+<PageLayout title={ABOUT_SITE_TITLE} description={ABOUT_SITE_DESCRIPTION}>
+	<main class='about py-28'>
+		<section class='pb-14'>
+			<div class='container mx-auto px-8'>
+				<div
+					class='flex flex-col-reverse gap-8 pb-8 lg:grid lg:grid-cols-3'
+				>
+					<Image
+						src={devkasunColorProfile}
+						width={1080}
+						height={1080}
+						alt='developer_image'
+						decoding='async'
+						loading='lazy'
+					/>
+					<div class='col-span-2'>
+						<h2 class='text-4xl pb-6'>Who am I?</h2>
+						<p class='text-lg pb-4'>
+							Hi, I&#39;m an Enthusiastic Frontend Developer who
+							loves to create beautiful user interfaces. I&#39;m
+							glad I decided to learn to program. It&#39;s taught
+							me how to become resourceful and think outside the
+							box. I&#39;ve been able to accomplish many things I
+							thought were impossible.
+						</p>
+						<p class='text-lg pb-4'>Skills & Tools:</p>
+						<Skills skills={skills} />
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class='pb-14'>
+			<div class='container mx-auto px-8'>
+				<h2 class='text-4xl pb-6'>Professional Experience</h2>
 
-	<p>
-		Morbi tristique senectus et netus. Id semper risus in hendrerit gravida rutrum quisque non
-		tellus. Habitasse platea dictumst quisque sagittis purus sit amet. Tellus molestie nunc non
-		blandit massa. Cursus vitae congue mauris rhoncus. Accumsan tortor posuere ac ut. Fringilla urna
-		porttitor rhoncus dolor. Elit ullamcorper dignissim cras tincidunt lobortis. In cursus turpis
-		massa tincidunt dui ut ornare lectus. Integer feugiat scelerisque varius morbi enim nunc.
-		Bibendum neque egestas congue quisque egestas diam. Cras ornare arcu dui vivamus arcu felis
-		bibendum. Dignissim suspendisse in est ante in nibh mauris. Sed tempus urna et pharetra pharetra
-		massa massa ultricies mi.
-	</p>
+				<div class='row grid sm:grid-cols-1 gap-8 pb-8 lg:grid-cols-3'>
+					<div class='flex-3'>
+						<h4 class='text-xl'>Senior Front-end Web developer</h4>
+						<p class='text-lg flex items-center gap-2 text-kgray'>
+							Rhino Partners
+						</p>
+						<p class='text-sm pt-2 text-kgray'>
+							Oct 2019 - Present
+						</p>
+					</div>
+					<div class='col-span-2'>
+						Acquired Skills: <Skills skills={RhinoPartnersSkills} />
+					</div>
+				</div>
 
-	<p>
-		Mollis nunc sed id semper risus in. Convallis a cras semper auctor neque. Diam sit amet nisl
-		suscipit. Lacus viverra vitae congue eu consequat ac felis donec. Egestas integer eget aliquet
-		nibh praesent tristique magna sit amet. Eget magna fermentum iaculis eu non diam. In vitae
-		turpis massa sed elementum. Tristique et egestas quis ipsum suspendisse ultrices. Eget lorem
-		dolor sed viverra ipsum. Vel turpis nunc eget lorem dolor sed viverra. Posuere ac ut consequat
-		semper viverra nam. Laoreet suspendisse interdum consectetur libero id faucibus. Diam phasellus
-		vestibulum lorem sed risus ultricies tristique. Rhoncus dolor purus non enim praesent elementum
-		facilisis. Ultrices tincidunt arcu non sodales neque. Tempus egestas sed sed risus pretium quam
-		vulputate. Viverra suspendisse potenti nullam ac tortor vitae purus faucibus ornare. Fringilla
-		urna porttitor rhoncus dolor purus non. Amet dictum sit amet justo donec enim.
-	</p>
-
-	<p>
-		Mattis ullamcorper velit sed ullamcorper morbi tincidunt. Tortor posuere ac ut consequat semper
-		viverra. Tellus mauris a diam maecenas sed enim ut sem viverra. Venenatis urna cursus eget nunc
-		scelerisque viverra mauris in. Arcu ac tortor dignissim convallis aenean et tortor at. Curabitur
-		gravida arcu ac tortor dignissim convallis aenean et tortor. Egestas tellus rutrum tellus
-		pellentesque eu. Fusce ut placerat orci nulla pellentesque dignissim enim sit amet. Ut enim
-		blandit volutpat maecenas volutpat blandit aliquam etiam. Id donec ultrices tincidunt arcu. Id
-		cursus metus aliquam eleifend mi.
-	</p>
-
-	<p>
-		Tempus quam pellentesque nec nam aliquam sem. Risus at ultrices mi tempus imperdiet. Id porta
-		nibh venenatis cras sed felis eget velit. Ipsum a arcu cursus vitae. Facilisis magna etiam
-		tempor orci eu lobortis elementum. Tincidunt dui ut ornare lectus sit. Quisque non tellus orci
-		ac. Blandit libero volutpat sed cras. Nec tincidunt praesent semper feugiat nibh sed pulvinar
-		proin gravida. Egestas integer eget aliquet nibh praesent tristique magna.
-	</p>
-</Layout>
+				<div class='row grid sm:grid-cols-1 gap-4 pb-8 lg:grid-cols-3'>
+					<div class='flex-3'>
+						<h4 class='text-xl'>Front-end Web developer</h4>
+						<p class='text-lg flex items-center gap-2 text-kgray'>
+							SevenSigns
+						</p>
+						<p class='text-sm pt-2 text-kgray'>
+							Dec 2016 - Aug 2018
+						</p>
+					</div>
+					<div class='col-span-2'>
+						Acquired Skills: <Skills skills={sevenSignsSkills} />
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+</PageLayout>

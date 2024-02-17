@@ -1,0 +1,66 @@
+---
+import { Image } from 'astro:assets';
+import TwitterIcon from '../assets/icons/twitter.svg';
+import LinkedinIcon from '../assets/icons/linkedin.svg';
+import InstagramIcon from '../assets/icons/instagram.svg';
+import FacebookIcon from '../assets/icons/facebook.svg';
+---
+
+<ul class='social-media flex items-center'>
+	<li>
+		<a
+			href='https://twitter.com'
+			target='_blank'
+			class='block px-2 cursor-pointer hover:scale-125 duration-300'
+		>
+			<Image
+				width='24'
+				height='24'
+				src={TwitterIcon}
+				alt='Twitter_icon'
+			/>
+		</a>
+	</li>
+	<li>
+		<a
+			href='https://linkedin.com'
+			target='_blank'
+			class='block px-2 cursor-pointer hover:scale-125 duration-300'
+		>
+			<Image
+				width='24'
+				height='24'
+				src={LinkedinIcon}
+				alt='LinkedIn_icon'
+			/>
+		</a>
+	</li>
+	<li>
+		<a
+			href='https://instagram.com'
+			target='_blank'
+			class='block px-2 cursor-pointer hover:scale-125 duration-300'
+		>
+			<Image
+				width='24'
+				height='24'
+				src={InstagramIcon}
+				alt='Instagram_icon'
+			/>
+		</a>
+	</li>
+	<li>
+		<a
+			href='https://facebook.com'
+			target='_blank'
+			class='block px-2 cursor-pointer hover:scale-125 duration-300'
+		>
+			<Image
+				width='24'
+				height='24'
+				src={FacebookIcon}
+				alt='Facebook_icon'
+			/>
+		</a>
+	</li>
+</ul>

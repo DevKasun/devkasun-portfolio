@@ -10,6 +10,9 @@ export const HOME_SITE_DESCRIPTION = 'Welcome to my website!';
 export const ABOUT_SITE_TITLE = 'DevKasun - About Page';
 export const ABOUT_SITE_DESCRIPTION = 'Brief introduction about myself.';
 
+export const CONTACT_SITE_TITLE = 'DevKasun - Contact Page';
+export const CONTACT_SITE_DESCRIPTION = 'Contact me!';
+
 export const skills = [
     'HTML',
     'CSS',

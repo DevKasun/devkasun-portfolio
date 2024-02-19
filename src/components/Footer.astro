@@ -6,14 +6,16 @@ import SocialMediaLinks from './SocialMediaLinks.astro';
 ---
 
 <footer class='fixed bottom-0 w-full py-4 bg-kblack'>
-	<div class='container mx-auto px-8 flex items-center justify-between'>
-		<ul>
+	<div
+		class='container mx-auto px-8 grid items-center justify-between grid-cols-3'
+	>
+		<ul class='flex justify-start'>
 			<li>
 				<FooterLink>
-					<span class='flex items-center px-2 gap-1'>
+					<span class='flex items-center px-2 gap-1 text-base'>
 						<Image
-							width={20}
-							height={20}
+							width={18}
+							height={18}
 							src={atSignIcon}
 							alt='at-sign'
 						/>
@@ -22,7 +24,7 @@ import SocialMediaLinks from './SocialMediaLinks.astro';
 				</FooterLink>
 			</li>
 		</ul>
-		<nav>
+		<nav class='flex justify-center'>
 			<ul class='flex'>
 				<li>
 					<FooterLink href='/'>Home</FooterLink>
@@ -38,6 +40,8 @@ import SocialMediaLinks from './SocialMediaLinks.astro';
 				</li>
 			</ul>
 		</nav>
-		<SocialMediaLinks />
+		<div class='flex justify-end'>
+			<SocialMediaLinks />
+		</div>
 	</div>
 </footer>

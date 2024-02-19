@@ -13,6 +13,9 @@ export const ABOUT_SITE_DESCRIPTION = 'Brief introduction about myself.';
 export const CONTACT_SITE_TITLE = 'DevKasun - Contact Page';
 export const CONTACT_SITE_DESCRIPTION = 'Contact me!';
 
+export const BLOG_SITE_TITLE = 'DevKasun - Blog page';
+export const BLOG_SITE_DESCRIPTION = 'Read me blog articles';
+
 export const skills = [
     'HTML',
     'CSS',

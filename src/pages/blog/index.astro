@@ -1,111 +1,73 @@
 ---
-import BaseHead from '../../components/BaseHead.astro';
-import Header from '../../components/Header.astro';
-import Footer from '../../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
+import { BLOG_SITE_TITLE, BLOG_SITE_DESCRIPTION } from '../../consts';
 import { getCollection } from 'astro:content';
 import FormattedDate from '../../components/FormattedDate.astro';
-
+import PageLayout from '../../layouts/PageLayout.astro';
+import { Image } from 'astro:assets';
 const posts = (await getCollection('blog')).sort(
 	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
 );
+import blogCoverImage from '../../assets/images/blog-cover.png';
 ---
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-		<style>
-			main {
-				width: 960px;
-			}
-			ul {
-				display: flex;
-				flex-wrap: wrap;
-				gap: 2rem;
-				list-style-type: none;
-				margin: 0;
-				padding: 0;
-			}
-			ul li {
-				width: calc(50% - 1rem);
-			}
-			ul li * {
-				text-decoration: none;
-				transition: 0.2s ease;
-			}
-			ul li:first-child {
-				width: 100%;
-				margin-bottom: 1rem;
-				text-align: center;
-			}
-			ul li:first-child img {
-				width: 100%;
-			}
-			ul li:first-child .title {
-				font-size: 2.369rem;
-			}
-			ul li img {
-				margin-bottom: 0.5rem;
-				border-radius: 12px;
-			}
-			ul li a {
-				display: block;
-			}
-			.title {
-				margin: 0;
-				color: rgb(var(--black));
-				line-height: 1;
-			}
-			.date {
-				margin: 0;
-				color: rgb(var(--gray));
-			}
-			ul li a:hover h4,
-			ul li a:hover .date {
-				color: rgb(var(--accent));
-			}
-			ul a:hover img {
-				box-shadow: var(--box-shadow);
-			}
-			@media (max-width: 720px) {
-				ul {
-					gap: 0.5em;
-				}
-				ul li {
-					width: 100%;
-					text-align: center;
-				}
-				ul li:first-child {
-					margin-bottom: 0;
-				}
-				ul li:first-child .title {
-					font-size: 1.563em;
-				}
-			}
-		</style>
-	</head>
-	<body>
-		<Header />
-		<main>
-			<section>
-				<ul>
+<PageLayout title={BLOG_SITE_TITLE} description={BLOG_SITE_DESCRIPTION}>
+	<main class='about py-28'>
+		<section class='pb-14'>
+			<div class='container mx-auto px-8'>
+				<div
+					class='flex flex-col-reverse gap-8 pb-8 lg:grid lg:grid-cols-4'
+				>
+					<Image
+						class='col-span-2'
+						src={blogCoverImage}
+						width={1792}
+						height={1024}
+						alt='developer_image'
+					/>
+					<div class='col-span-2'>
+						<h2 class='text-4xl pb-6'>
+							DevBlog: Beyond the Binary
+						</h2>
+						<p class='text-lg pb-4'>
+							This blog is a space for sharing my passion for
+							technology and its power to build, create, and solve
+							problems. Whether you're a seasoned developer or
+							just starting out, you'll find valuable insights and
+							inspiration to shape your tech journey.
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class='pb-14'>
+			<div class='container mx-auto px-8'>
+				<ul
+					class='list-none grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8'
+				>
 					{
 						posts.map((post) => (
 							<li>
 								<a href={`/blog/${post.slug}/`}>
-									<img width={720} height={360} src={post.data.heroImage} alt="" />
-									<h4 class="title">{post.data.title}</h4>
-									<p class="date">
-										<FormattedDate date={post.data.pubDate} />
+									<img
+										width={720}
+										height={360}
+										src={post.data.heroImage}
+										alt=''
+									/>
+									<h4 class='title pt-4'>
+										{post.data.title}
+									</h4>
+									<p class='date text-xs pt-1'>
+										<FormattedDate
+											date={post.data.pubDate}
+										/>
 									</p>
 								</a>
 							</li>
 						))
 					}
 				</ul>
-			</section>
-		</main>
-		<Footer />
-	</body>
-</html>
+			</div>
+		</section>
+	</main>
+</PageLayout>

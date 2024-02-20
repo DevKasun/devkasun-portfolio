@@ -1,0 +1,77 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import { ABOUT_SITE_TITLE, ABOUT_SITE_DESCRIPTION } from '../consts';
+import { Image } from 'astro:assets';
+import devkasunColorProfile from '../assets/images/devkasun-color.png';
+import Skills from '../components/Skills.astro';
+import { skills, sevenSignsSkills, RhinoPartnersSkills } from '../consts';
+---
+
+<PageLayout title={ABOUT_SITE_TITLE} description={ABOUT_SITE_DESCRIPTION}>
+	<main class='about py-28'>
+		<section class='pb-14'>
+			<div class='container mx-auto px-8'>
+				<div
+					class='flex flex-col-reverse gap-8 pb-8 lg:grid lg:grid-cols-3'
+				>
+					<Image
+						src={devkasunColorProfile}
+						width={1080}
+						height={1080}
+						alt='developer_image'
+						decoding='async'
+						loading='lazy'
+					/>
+					<div class='col-span-2'>
+						<h2 class='text-4xl pb-6'>Who am I?</h2>
+						<p class='text-lg pb-4'>
+							Hi, I&#39;m an Enthusiastic Frontend Developer who
+							loves to create beautiful user interfaces. I&#39;m
+							glad I decided to learn to program. It&#39;s taught
+							me how to become resourceful and think outside the
+							box. I&#39;ve been able to accomplish many things I
+							thought were impossible.
+						</p>
+						<p class='text-lg pb-4'>Skills & Tools:</p>
+						<Skills skills={skills} />
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class='pb-14'>
+			<div class='container mx-auto px-8'>
+				<h2 class='text-4xl pb-6'>Professional Experience</h2>
+
+				<div class='row grid sm:grid-cols-1 gap-8 pb-8 lg:grid-cols-3'>
+					<div class='flex-3'>
+						<h4 class='text-xl'>Senior Front-end Web developer</h4>
+						<p class='text-lg flex items-center gap-2 text-kgray'>
+							Rhino Partners
+						</p>
+						<p class='text-sm pt-2 text-kgray'>
+							Oct 2019 - Present
+						</p>
+					</div>
+					<div class='col-span-2'>
+						Acquired Skills: <Skills skills={RhinoPartnersSkills} />
+					</div>
+				</div>
+
+				<div class='row grid sm:grid-cols-1 gap-4 pb-8 lg:grid-cols-3'>
+					<div class='flex-3'>
+						<h4 class='text-xl'>Front-end Web developer</h4>
+						<p class='text-lg flex items-center gap-2 text-kgray'>
+							SevenSigns
+						</p>
+						<p class='text-sm pt-2 text-kgray'>
+							Dec 2016 - Aug 2018
+						</p>
+					</div>
+					<div class='col-span-2'>
+						Acquired Skills: <Skills skills={sevenSignsSkills} />
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+</PageLayout>

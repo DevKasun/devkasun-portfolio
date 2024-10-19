@@ -1,30 +1,51 @@
 ---
-import { Image } from 'astro:assets';
-import menuIcon from '../assets/icons/menu.svg';
+import MenuIcon from '../icons/MenuICon';
 import HeaderLink from './HeaderLink.astro';
 ---
 
 <header class='fixed top-0 w-full h-fit py-4 bg-kwhite'>
 	<div class='container mx-auto px-8 flex items-center justify-between'>
 		<a href='/' class='text-2xl'>DevKasun</a>
-            <nav class='flex justify-center'>
-                <menu class="flex gap-4">
-    				<li>
-    					<HeaderLink href='/'>Home</HeaderLink>
-    				</li>
-    				<li>
-    					<HeaderLink href='/about'>About</HeaderLink>
-    				</li>
-    				<li>
-    					<HeaderLink href='/blog'>Blog</HeaderLink>
-    				</li>
-    				<li>
-    					<HeaderLink href='/contact'>Contact</HeaderLink>
-    				</li>
-                </menu>
-			</nav>
-		<button type='button' class="hidden">
-			<Image src={menuIcon} width='24' height='24' alt='menu_icons' />
-		</button>
+		<nav class='flex justify-center'>
+			<button id='menu-toggle' class='block lg:hidden relative z-10'>
+				<MenuIcon size='size-7' />
+			</button>
+			<menu
+				id='menu'
+				class='hidden lg:flex gap-4 lg:static lg:w-auto lg:h-auto lg:bg-transparent lg:flex-row fixed w-full h-full bg-aqua top-0 left-0 right-0 bottom-0 flex-col items-center justify-center bg-kgreen text-kwhite'
+			>
+				<li>
+					<HeaderLink href='/'>Home</HeaderLink>
+				</li>
+				<li>
+					<HeaderLink href='/about'>About</HeaderLink>
+				</li>
+				<li>
+					<HeaderLink href='/blog'>Blog</HeaderLink>
+				</li>
+				<li>
+					<HeaderLink href='/contact'>Contact</HeaderLink>
+				</li>
+			</menu>
+		</nav>
 	</div>
 </header>
+
+<script>
+	document.addEventListener('DOMContentLoaded', () => {
+		const menuToggleButton = document.querySelector(
+			'#menu-toggle'
+		) as HTMLButtonElement;
+		const menu = document.querySelector('#menu') as HTMLElement;
+
+		if (menuToggleButton && menu) {
+			menuToggleButton.addEventListener('click', () => {
+				console.log('Click');
+				menu.classList.toggle('hidden');
+				menu.classList.toggle('flex');
+			});
+		} else {
+			console.error('Menu toggle button or menu element not found');
+		}
+	});
+</script>

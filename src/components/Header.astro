@@ -5,14 +5,14 @@ import HeaderLink from './HeaderLink.astro';
 
 <header class='fixed top-0 w-full h-fit py-4 bg-kwhite'>
 	<div class='container mx-auto px-8 flex items-center justify-between'>
-		<a href='/' class='text-2xl'>DevKasun</a>
+		<a href='/' class='relative z-10 text-2xl'>DevKasun</a>
 		<nav class='flex justify-center'>
 			<button id='menu-toggle' class='block lg:hidden relative z-10'>
 				<MenuIcon size='size-7' />
 			</button>
 			<menu
 				id='menu'
-				class='hidden lg:flex gap-4 lg:static lg:w-auto lg:h-auto lg:bg-transparent lg:flex-row fixed w-full h-full bg-aqua top-0 left-0 right-0 bottom-0 flex-col items-center justify-center bg-kgreen text-kwhite'
+				class='hidden lg:flex gap-8 lg:gap-4 lg:static lg:w-auto lg:h-auto lg:bg-transparent lg:flex-row fixed w-full h-full bg-aqua top-0 left-0 right-0 bottom-0 flex-col items-center justify-center bg-kwhite'
 			>
 				<li>
 					<HeaderLink href='/'>Home</HeaderLink>

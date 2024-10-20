@@ -1,22 +1,26 @@
 ---
-import { Image } from 'astro:assets';
+import { Picture } from 'astro:assets';
 import PageLayout from '../layouts/PageLayout.astro';
 import myProfilePic from '../assets/images/profile-pic.png';
 import { HOME_SITE_TITLE, HOME_SITE_DESCRIPTION } from '../consts';
 ---
 
 <PageLayout title={HOME_SITE_TITLE} description={HOME_SITE_DESCRIPTION}>
-	<main class='home py-28py-28 flex items-center justify-center'>
+	<main class='home h-screen py-28 flex items-center justify-center'>
 		<div class='home-content flex flex-col items-center text-center'>
-			<Image
+			<Picture
 				src={myProfilePic}
-				class="rounded-full bg-kred border-4 border-solid border-kgreen"
-				width='320'
-				height='320'
-				alt='my_profile_pic'
+				widths={[250, 320]}
+				sizes='(max-width: 767px) 250px, 320px'
+				formats={['webp', 'avif', 'png']}
+				class='rounded-full bg-kred border-4 border-solid border-kgreen w-[100%] lg:w-[100%]"'
+				formats={['avif', 'webp']}
+				alt='My profile picture'
 			/>
-			<h4 class='pt-8 text-2xl'>Developer</h4>
-			<h1 class='text-8xl text-kred'>
+			<h4 class='pt-4 pb-2 md:pt-8 md:pb-4 text-2xl lg:text-4xl'>
+				Developer
+			</h4>
+			<h1 class='text-5xl md:text-7xl lg:text-8xl text-kred'>
 				Kasun <br /> Lakshitha
 			</h1>
 		</div>

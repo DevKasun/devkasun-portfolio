@@ -1,10 +1,10 @@
-export default function MenuIcon({ size }) {
+export default function MenuIcon({ size, className }) {
 	return (
 		<svg
 			xmlns='http://www.w3.org/2000/svg'
 			viewBox='0 0 24 24'
 			fill='currentColor'
-			className={size}
+			className={`${size} ${className} || '' `}
 		>
 			<path
 				fillRule='evenodd'

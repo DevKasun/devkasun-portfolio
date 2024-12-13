@@ -15,6 +15,7 @@ const isActive = href === pathname || href === '/' + subpath?.[0];
 	class:list={`link block px-2 text-2xl lg:text-xl duration-300 hover:text-kred ${
 		isActive ? 'active text-kred underline lg:no-underline' : 'text-kgreen'
 	}`}
+	{...props}
 >
 	<slot />
 </a>

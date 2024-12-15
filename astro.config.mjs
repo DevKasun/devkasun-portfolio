@@ -1,6 +1,5 @@
 import { defineConfig } from "astro/config";
 import mdx from "@astrojs/mdx";
-import react from '@astrojs/react';
 import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
 
@@ -9,7 +8,7 @@ import vercel from "@astrojs/vercel/static";
 // https://astro.build/config
 export default defineConfig({
   site: "https://devkasun.me",
-  integrations: [mdx(), sitemap(), tailwind(), react()],
+  integrations: [mdx(), sitemap(), tailwind()],
   adapter: vercel(),
   image: {
     service: {
@@ -18,5 +17,8 @@ export default defineConfig({
         limitInputPixels: 268435456, // 16384 x 16384 pixels (adjust if needed)
       },
     },
+  },
+  experimental: {
+    svg: true,
   },
 });

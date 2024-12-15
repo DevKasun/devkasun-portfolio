@@ -1,6 +1,4 @@
 ---
-import CloseIcon from '../icons/CloseIcon';
-import MenuIcon from '../icons/MenuICon';
 import HeaderLink from './HeaderLink.astro';
 ---
 
@@ -9,8 +7,12 @@ import HeaderLink from './HeaderLink.astro';
 		<a href='/' class='relative z-10 text-2xl'>DevKasun</a>
 		<nav class='flex justify-center'>
 			<button id='menu-toggle' class='block lg:hidden relative z-10'>
-				<MenuIcon size='size-7' className='menu-icon' />
-				<CloseIcon size='size-7' className='close-icon hidden' />
+			    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 menu-icon">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 close-icon hidden">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                </svg>
 			</button>
 			<menu
 				id='menu'
@@ -35,27 +37,18 @@ import HeaderLink from './HeaderLink.astro';
 
 <script>
 	document.addEventListener('DOMContentLoaded', () => {
-		const menuToggleButton = document.querySelector(
-			'#menu-toggle'
-		) as HTMLButtonElement;
-		const menu = document.querySelector('#menu') as HTMLElement;
-		const menuIcon = document.querySelector(
-			'.menu-icon'
-		) as HTMLImageElement;
-		const closeIcon = document.querySelector(
-			'.close-icon'
-		) as HTMLImageElement;
+		const menuToggle = document.getElementById('menu-toggle');
+		const menu = document.getElementById('menu');
+		const menuIcon = document.querySelector('.menu-icon');
+		const closeIcon = document.querySelector('.close-icon');
 
-		if (menuToggleButton && menu) {
-			menuToggleButton.addEventListener('click', () => {
-				console.log('Click');
+		if (menuToggle && menu && menuIcon && closeIcon) {
+			menuToggle.addEventListener('click', () => {
 				menu.classList.toggle('hidden');
 				menu.classList.toggle('flex');
 				menuIcon.classList.toggle('hidden');
 				closeIcon.classList.toggle('hidden');
 			});
-		} else {
-			console.error('Menu toggle button or menu element not found');
 		}
 	});
 </script>

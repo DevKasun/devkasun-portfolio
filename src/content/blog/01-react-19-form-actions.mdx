@@ -1,8 +1,8 @@
 ---
-title: "React 19 Form Actions"
-description: "Lorem ipsum dolor sit amet"
-pubDate: "13 Dec 2024"
-heroImage: "/form-actions-post-2.png"
+title: 'React 19 Form Actions'
+description: 'React 19 new feature - Form actions'
+pubDate: '13 Dec 2024'
+heroImage: '/blog-posts/blog-1.png'
 ---
 
 **React v19** comes with great features that are genuinely useful. Instead of discussing all features at once, I'll cover them one by one so they can be easily applied to our applications. I'll keep the explanations concise and easy to read.
@@ -17,11 +17,11 @@ Think of Form Actions as a smart helper that makes form handling on websites sup
 
 ## Key Features:
 
-- Automatic state management
-- Built-in pending states during form submission
-- Optimistic updates through the useOptimistic hook
-- Error handling with Error Boundaries
-- Automatic form reset after successful submission
+-   Automatic state management
+-   Built-in pending states during form submission
+-   Optimistic updates through the useOptimistic hook
+-   Error handling with Error Boundaries
+-   Automatic form reset after successful submission
 
 When it comes to Form Actions, we can't ignore the new **useActionState** hook.
 
@@ -31,16 +31,16 @@ The useActionState is a React Hook designed to manage form actions and state upd
 
 ```javascript
 const [state, formAction, isPending] = useActionState(
-  actionFunction,
-  initialState
+	actionFunction,
+	initialState
 );
 ```
 
 The hook returns three elements:
 
-- state: The current state value
-- formAction: A new action function for forms
-- isPending: A boolean indicating if the action is in progress
+-   state: The current state value
+-   formAction: A new action function for forms
+-   isPending: A boolean indicating if the action is in progress
 
 Think of useActionState as a smart traffic light for your forms - it helps you track your form's status at any moment, whether it's ready to submit, processing information, or encountering errors.
 
@@ -67,54 +67,54 @@ const [state, submit, isBusy] = useActionState
 Here's another practical example for a login form. Just ignore my Tailwind CSS classes. 😅
 
 ```javascript
-import { useActionState } from "react";
+import { useActionState } from 'react';
 
 function FormActionExample() {
-  const [state, formActionFunc] = useActionState(
-    async (prevState, formData) => {
-      const name = formData.get("email");
-      const password = formData.get("password");
+	const [state, formActionFunc] = useActionState(
+		async (prevState, formData) => {
+			const name = formData.get('email');
+			const password = formData.get('password');
 
-      const attempts = (prevState?.attempts || 0) + 1;
+			const attempts = (prevState?.attempts || 0) + 1;
 
-      console.log(name);
-      console.log(password);
+			console.log(name);
+			console.log(password);
 
-      return { message: "Login Success", attempts: attempts };
-    }
-  );
+			return { message: 'Login Success', attempts: attempts };
+		}
+	);
 
-  return (
-    <div className="w-full flex flex-col items-center gap-4 text-center">
-      <h3 className="text-xl"> --- Client Side --- </h3>
-      <form
-        action={formActionFunc}
-        className="flex flex-col gap-4 max-w-72 w-full"
-      >
-        <input
-          type="email"
-          name="email"
-          placeholder="User Email"
-          className="border-2 border-solid border-black rounded-md p-2"
-        />
-        <input
-          type="password"
-          name="password"
-          placeholder="User Password"
-          className="border-2 border-solid border-black rounded-md p-2"
-        />
-        <button
-          type="submit"
-          className="border-2 border-solid border-black rounded-md p-2 bg-black text-white"
-        >
-          Login
-        </button>
-      </form>
+	return (
+		<div className='w-full flex flex-col items-center gap-4 text-center'>
+			<h3 className='text-xl'> --- Client Side --- </h3>
+			<form
+				action={formActionFunc}
+				className='flex flex-col gap-4 max-w-72 w-full'
+			>
+				<input
+					type='email'
+					name='email'
+					placeholder='User Email'
+					className='border-2 border-solid border-black rounded-md p-2'
+				/>
+				<input
+					type='password'
+					name='password'
+					placeholder='User Password'
+					className='border-2 border-solid border-black rounded-md p-2'
+				/>
+				<button
+					type='submit'
+					className='border-2 border-solid border-black rounded-md p-2 bg-black text-white'
+				>
+					Login
+				</button>
+			</form>
 
-      {state?.message && <p>{state.message}</p>}
-      {state?.attempts && <p>Login attempts: {state.attempts}</p>}
-    </div>
-  );
+			{state?.message && <p>{state.message}</p>}
+			{state?.attempts && <p>Login attempts: {state.attempts}</p>}
+		</div>
+	);
 }
 
 export default FormActionExample;

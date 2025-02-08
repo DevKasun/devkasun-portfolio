@@ -1,0 +1,33 @@
+---
+import { Image } from 'astro:assets';
+import PageLayout from '../layouts/PageLayout.astro';
+import workPageImage from '../../public/work.png'
+import { HOME_SITE_TITLE, HOME_SITE_DESCRIPTION } from '../consts';
+---
+
+<PageLayout title={HOME_SITE_TITLE} description={HOME_SITE_DESCRIPTION}>
+	<main class='about py-28'>
+	   <section class='pb-14'>
+			<div class="container mx-auto px-8">
+				<div class='flex flex-col-reverse gap-8 pb-8 lg:grid lg:grid-cols-3'>
+
+    				<div>
+        				<Image
+           					src={workPageImage}
+           					width={1080}
+           					height={1080}
+           					alt='developer_image'
+           					decoding='async'
+           					loading='lazy'
+        				/>
+                        <h2 class='text-4xl py-6'>My Work</h2>
+                    </div>
+    				<div class='col-span-2'>
+                        Projects need to add here ⚠️
+    				</div>
+
+				</div>
+			</div>
+		</section>
+	</main>
+</PageLayout>

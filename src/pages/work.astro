@@ -1,0 +1,79 @@
+---
+import { Image } from 'astro:assets';
+import PageLayout from '../layouts/PageLayout.astro';
+import linkIcon from '../assets/icons/arrow-up-right.svg';
+import workPageImage from '../../public/work.png';
+import projectPortfolio from '../assets/images/projects/project-portfolio.png';
+
+import { WORK_SITE_TITLE, WORK_SITE_DESCRIPTION } from '../consts';
+---
+
+<PageLayout title={WORK_SITE_TITLE} description={WORK_SITE_DESCRIPTION}>
+	<main class='about py-28'>
+		<section class='pb-14'>
+			<div class='container mx-auto px-8'>
+				<div class='flex flex-col gap-8 pb-8 lg:grid lg:grid-cols-5'>
+					<div class='col-span-2'>
+						<Image
+							src={workPageImage}
+							width={1280}
+							height={720}
+							alt='developer_image'
+							decoding='async'
+							loading='lazy'
+						/>
+						<h2 class='text-4xl py-6'>My Work</h2>
+					</div>
+					<div class='col-span-3'>
+						<div
+							class='flex flex-col md:grid grid-cols-3 gap-8 rounded p-4 bg-kgreen/20 trasition-background duration-300 ease-in-out hover:bg-kgreen/40'
+						>
+							<Image
+								src={projectPortfolio}
+								class='rounded'
+								width={1280}
+								height={720}
+								alt='developer_image'
+								decoding='async'
+								loading='lazy'
+							/>
+							<div class='col-span-2 flex flex-col gap-4'>
+								<h3
+									class='text-xl md:text-2xl flex gap-2 items-center mx-1'
+								>
+									Portfolio website
+									<a
+										target='_blank'
+										href='https://www.devkasun.me/'
+									>
+										<Image
+											src={linkIcon}
+											class='rounded'
+											width={24}
+											height={24}
+											alt='developer_image'
+											decoding='async'
+											loading='lazy'
+										/>
+									</a>
+								</h3>
+								<div>
+									<p class='mx-1 text-sm'>Tech Stack:</p>
+									<div class='flex
+										flex-wrap'>
+										<span class='tech-stack'>Astro</span>
+										<span class='tech-stack'
+											>TailwindCSS</span
+										>
+										<span class='tech-stack'>pnpm</span>
+										<span class='tech-stack'>Vercel</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+</PageLayout>

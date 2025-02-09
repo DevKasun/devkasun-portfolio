@@ -7,6 +7,9 @@ export const SITE_DESCRIPTION = 'Welcome to my website!';
 export const HOME_SITE_TITLE = 'DevKasun - Home Page';
 export const HOME_SITE_DESCRIPTION = 'Welcome to my website!';
 
+export const WORK_SITE_TITLE = 'DevKasun - Projects Page';
+export const WORK_SITE_DESCRIPTION = 'My projects';
+
 export const ABOUT_SITE_TITLE = 'DevKasun - About Page';
 export const ABOUT_SITE_DESCRIPTION = 'Brief introduction about myself.';
 

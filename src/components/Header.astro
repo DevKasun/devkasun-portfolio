@@ -1,19 +1,19 @@
 ---
 import HeaderLink from './HeaderLink.astro';
 import { Image } from 'astro:assets';
-import logoImage from '../assets/images/logo-svg-version.svg';
+import logoImage from '../assets/images/logo-red.svg';
 ---
 
 <header class='fixed top-0 w-full h-fit py-4 bg-kwhite'>
-	<div class='container mx-auto px-8 flex items-center justify-between'>
-		<a href='/' class='relative flex flex-row items-center gap-2 z-10 text-2xl'>
+	<div class='container mx-auto px-8 flex items-start lg:items-center justify-between'>
+		<a href='/' class='relative flex flex-row items-center gap-2 z-10'>
     		  <Image
     			class='col-span-2 w-8 h-8 sm:w-12 sm:h-12'
     			src={logoImage}
     			width={48}
     			height={48}
     			alt='devkasun_logo'/>
-            DevKasun
+            <span class="text-3xl font-slackside leading-[0.85]">DevKasun</span>
 		</a>
 		<nav class='flex justify-center'>
 			<button id='menu-toggle' class='block lg:hidden relative z-10'>

@@ -5,7 +5,7 @@ import FormattedDate from '../../components/FormattedDate.astro';
 import PageLayout from '../../layouts/PageLayout.astro';
 import { Image } from 'astro:assets';
 const posts = (await getCollection('blog')).sort(
-	(a, b: any) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
+ (a, b: any) => new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf()
 );
 import blogCoverImage from '../../assets/images/blog-cover.png';
 ---
@@ -31,7 +31,7 @@ import blogCoverImage from '../../assets/images/blog-cover.png';
 						<p class='text-lg pb-4'>
 							This blog is a space for sharing my passion for
 							technology and its power to build, create, and solve
-							problems. Whether you're a seasoned developer or 
+							problems. Whether you're a seasoned developer or
 							just starting out, you'll find valuable insights and
 							inspiration to shape your tech journey.
 						</p>

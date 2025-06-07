@@ -4,7 +4,7 @@ import { ABOUT_SITE_TITLE, ABOUT_SITE_DESCRIPTION } from '../consts';
 import { Image } from 'astro:assets';
 import devkasunColorProfile from '../assets/images/devkasun-color.png';
 import Skills from '../components/Skills.astro';
-import { skills, sevenSignsSkills, RhinoPartnersSkills } from '../consts';
+import { skills, sevenSignsSkills, RhinoPartnersSkills, FreelanceSkills } from '../consts';
 ---
 
 <PageLayout title={ABOUT_SITE_TITLE} description={ABOUT_SITE_DESCRIPTION}>
@@ -41,6 +41,21 @@ import { skills, sevenSignsSkills, RhinoPartnersSkills } from '../consts';
 		<section class='pb-14'>
 			<div class='container mx-auto px-8'>
 				<h2 class='text-4xl pb-6'>Professional Experience</h2>
+
+				<div class='row grid sm:grid-cols-1 gap-8 pb-8 lg:grid-cols-3'>
+					<div class='flex-3'>
+						<h4 class='text-xl'>Frontend Engineer</h4>
+						<p class='text-lg flex items-center gap-2 text-kgray'>
+							Freelance
+						</p>
+						<p class='text-sm pt-2 text-kgray'>
+							Feb 2025 - Present
+						</p>
+					</div>
+					<div class='col-span-2'>
+						Acquired Skills: <Skills skills={FreelanceSkills} />
+					</div>
+				</div>
 
 				<div class='row grid sm:grid-cols-1 gap-8 pb-8 lg:grid-cols-3'>
 					<div class='flex-3'>

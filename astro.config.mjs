@@ -9,7 +9,11 @@ import vercel from "@astrojs/vercel";
 export default defineConfig({
   site: "https://devkasun.me",
   integrations: [mdx(), sitemap(), tailwind()],
-  adapter: vercel(),
+  adapter: vercel({
+    webAnalytics: {
+      enabled: true, // set to false when using @vercel/analytics@1.4.0
+    },
+  }),
   image: {
     service: {
       entrypoint: "astro/assets/services/sharp",

@@ -20,9 +20,10 @@ import { Image } from 'astro:assets';
 						width='4032'
 						height='3024'
 						alt='developer_image'
+						data-animate="workspace-image"
 					/>
 
-					<div class='col-span-2'>
+					<div class='col-span-2' data-animate="contact-content">
 						<h2 class='text-4xl pb-6'>How to connect with me?</h2>
 						<p class='text-lg pb-8'>
 							As a passionate Front-End Web Developer, I'm always
@@ -36,7 +37,7 @@ import { Image } from 'astro:assets';
 							insights into my work.
 						</p>
 
-						<div class='pb-8'>
+						<div class='pb-8' data-animate="contact-item">
 							<p class='text-lg pb-2 text-kgray'>Email:</p>
 							<!-- Use standard <a> tag for links -->
 							<a
@@ -46,7 +47,7 @@ import { Image } from 'astro:assets';
 							>
 						</div>
 
-						<div class='pb-8'>
+						<div class='pb-8' data-animate="contact-item">
 							<p class='text-lg pb-2 text-kgray'>
 								Follow me on social media:
 							</p>
@@ -54,7 +55,7 @@ import { Image } from 'astro:assets';
 							<SocialMediaLinks />
 						</div>
 
-						<div class='pb-8'>
+						<div class='pb-8' data-animate="contact-item">
 							<p class='text-lg pb-2 text-kgray'>
 								Checkout my latest projects:
 							</p>
@@ -73,3 +74,93 @@ import { Image } from 'astro:assets';
 		</section>
 	</main>
 </PageLayout>
+
+<script>
+	import { gsap } from 'gsap';
+
+	document.addEventListener('DOMContentLoaded', () => {
+		// Set initial states
+		gsap.set('[data-animate="workspace-image"]', { 
+			opacity: 0, 
+			scale: 0.9,
+			x: -50
+		});
+		
+		gsap.set('[data-animate="contact-content"] h2', { 
+			opacity: 0, 
+			y: 30 
+		});
+		
+		gsap.set('[data-animate="contact-content"] p', { 
+			opacity: 0, 
+			y: 20 
+		});
+		
+		gsap.set('[data-animate="contact-item"]', { 
+			opacity: 0, 
+			x: 30 
+		});
+
+		// Create timeline
+		const tl = gsap.timeline({ defaults: { ease: 'power2.out' } });
+
+		// Animate workspace image
+		tl.to('[data-animate="workspace-image"]', {
+			opacity: 1,
+			scale: 1,
+			x: 0,
+			duration: 1,
+			ease: 'back.out(1.7)',
+		})
+		.to('[data-animate="contact-content"] h2', {
+			opacity: 1,
+			y: 0,
+			duration: 0.8,
+		}, '-=0.6')
+		.to('[data-animate="contact-content"] p', {
+			opacity: 1,
+			y: 0,
+			duration: 0.6,
+		}, '-=0.4')
+		.to('[data-animate="contact-item"]', {
+			opacity: 1,
+			x: 0,
+			duration: 0.6,
+			stagger: 0.15,
+		}, '-=0.2');
+
+		// Interactive hover effects
+		const emailLink = document.querySelector('a[href^="mailto:"]');
+		const githubLink = document.querySelector('a[href*="github.com"]');
+		
+		[emailLink, githubLink].forEach(link => {
+			if (link) {
+				link.addEventListener('mouseenter', () => {
+					gsap.to(link, {
+						scale: 1.05,
+						duration: 0.3,
+						ease: 'power2.out'
+					});
+				});
+
+				link.addEventListener('mouseleave', () => {
+					gsap.to(link, {
+						scale: 1,
+						duration: 0.3,
+						ease: 'power2.out'
+					});
+				});
+			}
+		});
+
+		// Floating animation for workspace image
+		gsap.to('[data-animate="workspace-image"]', {
+			y: -5,
+			duration: 3,
+			ease: 'power2.inOut',
+			yoyo: true,
+			repeat: -1,
+			delay: 2
+		});
+	});
+</script>

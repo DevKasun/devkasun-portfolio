@@ -5,6 +5,7 @@ import linkIcon from '../assets/icons/arrow-up-right.svg';
 import workPageImage from '../../public/work.png';
 import projectPortfolio from '../assets/images/projects/project-portfolio.png';
 import projectLiquidX from '../assets/images/projects/liquid-x.png';
+import projectAlfastack from '../assets/images/projects/project-alfastack.png';
 
 import { WORK_SITE_TITLE, WORK_SITE_DESCRIPTION } from '../consts';
 ---
@@ -116,6 +117,53 @@ import { WORK_SITE_TITLE, WORK_SITE_DESCRIPTION } from '../consts';
 										>
 										<span class='tech-stack'>Bun</span>
 										<span class='tech-stack'>Vercel</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div
+							class='flex flex-col md:grid grid-cols-3 gap-8 rounded p-4 bg-kgreen/20 trasition-background duration-300 ease-in-out hover:bg-kgreen/40'
+							data-animate="project-card"
+						>
+							<Image
+								src={projectAlfastack}
+								class='rounded object-cover h-[125px]'
+								width={1280}
+								height={720}
+								alt='developer_image'
+								decoding='async'
+								loading='lazy'
+							/>
+							<div class='col-span-2 flex flex-col gap-4'>
+								<h3
+									class='text-xl md:text-2xl flex gap-2 items-center mx-1'
+								>
+									Project Alfastack
+									<a
+										target='_blank'
+										href='https://project-alfastack.vercel.app/'
+									>
+										<Image
+											src={linkIcon}
+											class='rounded'
+											width={24}
+											height={24}
+											alt='developer_image'
+											decoding='async'
+											loading='lazy'
+										/>
+									</a>
+								</h3>
+								<div>
+									<p class='mx-1 text-sm'>Tech Stack:</p>
+									<div class='flex
+										flex-wrap'>
+										<span class='tech-stack'>Next JS</span>
+										<span class='tech-stack'
+											>TailwindCSS</span
+										>
+										<span class='tech-stack'>Lenis</span>
+										<span class='tech-stack'>Motion</span>
 									</div>
 								</div>
 							</div>

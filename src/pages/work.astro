@@ -7,6 +7,7 @@ import projectPortfolio from '../assets/images/projects/project-portfolio.png';
 import projectLiquidX from '../assets/images/projects/liquid-x.png';
 import projectAlfastack from '../assets/images/projects/project-alfastack.png';
 import projectKeExpenseTracker from '../assets/images/projects/ke-expense-tracker.png';
+import llf from '../assets/images/projects/llf.png';
 
 import { WORK_SITE_TITLE, WORK_SITE_DESCRIPTION } from '../consts';
 ---
@@ -218,9 +219,57 @@ import { WORK_SITE_TITLE, WORK_SITE_DESCRIPTION } from '../consts';
 								</div>
 							</div>
 						</div>
+
+						<div
+							class='flex flex-col md:grid grid-cols-3 gap-8 rounded p-4 bg-kgreen/20 trasition-background duration-300 ease-in-out hover:bg-kgreen/40'
+							data-animate="project-card"
+						>
+							<Image
+								src={llf}
+								class='rounded object-cover h-[125px]'
+								width={1280}
+								height={720}
+								alt='developer_image'
+								decoding='async'
+								loading='lazy'
+							/>
+							<div class='col-span-2 flex flex-col gap-4'>
+								<h3
+									class='text-xl md:text-2xl flex gap-2 items-center mx-1'
+								>
+								LLF
+									<a
+										target='_blank'
+										href='https://llfonline.com'
+									>
+										<Image
+											src={linkIcon}
+											class='rounded'
+											width={24}
+											height={24}
+											alt='developer_image'
+											decoding='async'
+											loading='lazy'
+										/>
+									</a>
+								</h3>
+								<div>
+									<p class='mx-1 text-sm'>Tech Stack:</p>
+									<div class='flex
+										flex-wrap'>
+										<span class='tech-stack'>PHP</span>
+										<span class='tech-stack'
+											>SCSS</span
+										>
+										<span class='tech-stack'>Jquery</span>
+										<span class='tech-stack'>OWL Carousel</span>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
-				
+
 			</div>
 		</section>
 	</main>
@@ -231,19 +280,19 @@ import { WORK_SITE_TITLE, WORK_SITE_DESCRIPTION } from '../consts';
 
 	document.addEventListener('DOMContentLoaded', () => {
 		// Set initial states
-		gsap.set('[data-animate="hero-left"]', { 
-			opacity: 0, 
-			x: -50 
+		gsap.set('[data-animate="hero-left"]', {
+			opacity: 0,
+			x: -50
 		});
-		
-		gsap.set('[data-animate="hero-right"]', { 
-			opacity: 0, 
-			x: 50 
+
+		gsap.set('[data-animate="hero-right"]', {
+			opacity: 0,
+			x: 50
 		});
-		
-		gsap.set('[data-animate="project-card"]', { 
-			opacity: 0, 
-			y: 30 
+
+		gsap.set('[data-animate="project-card"]', {
+			opacity: 0,
+			y: 30
 		});
 
 		// Create timeline for coordinated animations

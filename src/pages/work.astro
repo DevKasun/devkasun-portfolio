@@ -10,6 +10,40 @@ import projectKeExpenseTracker from '../assets/images/projects/ke-expense-tracke
 import llf from '../assets/images/projects/llf.png';
 
 import { WORK_SITE_TITLE, WORK_SITE_DESCRIPTION } from '../consts';
+
+const myProjects = [
+  {
+    title: "Portfolio website",
+    imageUrl: projectPortfolio,
+    projectUrl: "https://www.devkasun.me/",
+    techStack: ["Astro", "TailwindCSS", "pnpm", "Vercel"]
+  },
+  {
+    title: "Liquid X (Glassmorphism UI)",
+    imageUrl: projectLiquidX,
+    projectUrl: "https://liquid-x-ten.vercel.app/",
+    techStack: ["Vue", "SCSS", "Bun", "Vercel"]
+  },
+  {
+    title: "Project Alfastack",
+    imageUrl: projectAlfastack,
+    projectUrl: "https://project-alfastack.vercel.app/",
+    techStack: ["Next JS", "TailwindCSS", "Lenis", "Motion"]
+  },
+  {
+    title: "KeExpense Tracker",
+    imageUrl: projectKeExpenseTracker,
+    projectUrl: "https://ke-expense-tracker.vercel.app",
+    techStack: ["Next JS", "TailwindCSS", "Supabase", "GSAP", "Lenis"]
+  },
+  {
+    title: "LLF",
+    imageUrl: llf,
+    projectUrl: "https://llfonline.com",
+    techStack: ["PHP", "SCSS", "Jquery", "OWL Carousel"]
+  }
+];
+
 ---
 
 <PageLayout title={WORK_SITE_TITLE} description={WORK_SITE_DESCRIPTION}>
@@ -76,8 +110,7 @@ import { WORK_SITE_TITLE, WORK_SITE_DESCRIPTION } from '../consts';
 								</div>
 							</div>
 						</div>
-						<div
-							class='flex flex-col md:grid grid-cols-3 gap-8 rounded p-4 bg-kgreen/20 trasition-background duration-300 ease-in-out hover:bg-kgreen/40'
+						<div class='flex flex-col md:grid grid-cols-3 gap-8 rounded p-4 bg-kgreen/20 trasition-background duration-300 ease-in-out hover:bg-kgreen/40'
 							data-animate="project-card"
 						>
 							<Image

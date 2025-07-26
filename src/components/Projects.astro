@@ -1,0 +1,85 @@
+---
+import { Image } from 'astro:assets';
+import ProjectCard, { type ProjectProps } from './ProjectCard.astro';
+
+export interface ProjectsProps {
+  title?: string;
+  heroImage?: ImageMetadata;
+  projects: ProjectProps[];
+}
+
+const {
+  title = "My Projects",
+  heroImage,
+  projects = []
+} = Astro.props;
+
+---
+
+<section class="pb-14">
+  <div class="container mx-auto px-8">
+    <div class="flex flex-col gap-8 pb-8 lg:grid lg:grid-cols-5">
+      <div class="col-span-2" data-animate="hero-left">
+        {heroImage && (
+          <Image
+            src={heroImage}
+            width={1280}
+            height={720}
+            alt="Projects section image"
+            decoding="async"
+            loading="lazy"
+          />
+        )}
+        <h2 class="text-4xl py-6">{title}</h2>
+      </div>
+      <div class="col-span-3 flex flex-col gap-4" data-animate="hero-right">
+        {projects.map((project: any) => (
+          <ProjectCard {...project} />
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  import { gsap } from 'gsap';
+
+  document.addEventListener('DOMContentLoaded', () => {
+    // Set initial states
+    gsap.set('[data-animate="hero-left"]', {
+      opacity: 0,
+      x: -50
+    });
+
+    gsap.set('[data-animate="hero-right"]', {
+      opacity: 0,
+      x: 50
+    });
+
+    gsap.set('[data-animate="project-card"]', {
+      opacity: 0,
+      y: 30
+    });
+
+    // Create timeline for coordinated animations
+    const tl = gsap.timeline({ defaults: { ease: 'power2.out' } });
+
+    // Animate hero sections
+    tl.to('[data-animate="hero-left"]', {
+      opacity: 1,
+      x: 0,
+      duration: 0.8,
+    })
+    .to('[data-animate="hero-right"]', {
+      opacity: 1,
+      x: 0,
+      duration: 0.8,
+    }, '-=0.6')
+    .to('[data-animate="project-card"]', {
+      opacity: 1,
+      y: 0,
+      duration: 0.6,
+      stagger: 0.2,
+    }, '-=0.4');
+  });
+</script>

@@ -6,12 +6,12 @@ import Analytics from "@vercel/analytics/astro";
 ---
 
 <!doctype html>
-<html lang="en" class="min-h-full">
+<html lang="en" class='min-h-full'>
     <head>
         <BaseHead title={title} description={description} />
     </head>
-    <body class="h-screen">
-        <!-- <Header /> -->
+    <body>
+        <Header />
         <slot />
         <Analytics />
     </body>

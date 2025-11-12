@@ -1,0 +1,14 @@
+@import 'tailwindcss' layer(theme);
+
+@layer theme {
+	:root {
+		--color-bg: hsl(0 0% 0% / 0.95);
+		--color-text: hsl(0 0% 100% / 0.95);
+		--bg-hero: url('../assets/images/devk-bg.webp');
+	}
+
+	:root:light {
+		--color-bg: hsl(0 0% 100% / 0.95);
+		--color-text: hsl(0 0% 0% / 0.95);
+	}
+}

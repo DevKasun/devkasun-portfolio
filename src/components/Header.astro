@@ -3,9 +3,26 @@ import { Image } from "astro:assets";
 import logoImage from "../assets/images/logo-red.svg";
 ---
 
-<header class="fixed z-10 top-0 w-full h-fit py-4 bg-kwhite">
-    <div
-        class="container mx-auto px-8 flex items-start lg:items-center justify-between"
-    >
-    </div>
+<header class="">
+        <nav class="@container"> 
+            <ul class="flex items-center gap-8 justify-end">
+                <li>
+                    <a href="/blog">Blog</a>
+                </li>
+                <li>
+                    <a href="/projects">Projects</a>
+                </li>
+                <li>
+                    <a href="https://github.com/DevKasun" target="_blank">Github</a>
+                </li>
+                <li>
+                    <a href="https://www.youtube.com/@devkasun" target="_blank">YouTube</a>
+                </li>
+                <li>
+                    <a href="/about" target="_blank">
+                    
+                    </a>
+                </li>
+            </ul>
+        </nav>
 </header>

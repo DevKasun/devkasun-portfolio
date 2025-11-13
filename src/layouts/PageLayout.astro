@@ -11,8 +11,10 @@ import Analytics from "@vercel/analytics/astro";
         <BaseHead title={title} description={description} />
     </head>
     <body>
-        <Header />
-        <slot />
+        <div class="pg-wrpr">
+            <Header />
+            <slot />
+        </div>
         <Analytics />
     </body>
 </html>

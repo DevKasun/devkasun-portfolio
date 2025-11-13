@@ -1,14 +1,13 @@
 @import 'tailwindcss' layer(theme);
+@import '@fontsource-variable/geist';
+@import '@fontsource-variable/geist-mono';
 
-@layer theme {
-	:root {
-		--color-bg: hsl(0 0% 0% / 0.95);
-		--color-text: hsl(0 0% 100% / 0.95);
-		--bg-hero: url('../assets/images/devk-bg.webp');
-	}
-
-	:root:light {
-		--color-bg: hsl(0 0% 100% / 0.95);
-		--color-text: hsl(0 0% 0% / 0.95);
-	}
+@theme {
+	--color-text: hsl(0 0% 0% / 0.95);
+	--color-bg: hsl(0 0% 100% / 0.95);
+	--bg-hero: url('../assets/images/devk-bg.webp');
+	--color-text-dark: hsl(0 0% 100% / 0.95);
+	--color-bg-dark: hsl(0 0% 0% / 0.95);
+	--font-geist: 'Geist Variable', sans-serif;
+	--font-geist-mono: 'Geist Mono Variable', monospace;
 }

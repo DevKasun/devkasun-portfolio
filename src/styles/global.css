@@ -1,14 +1,16 @@
 @import './theme.css';
 @import 'tailwindcss';
-@import '@fontsource-variable/geist';
 /* @import '@fontsource-variable/geist-mono'; */
 
-body {
-	font-family: 'Geist Variable', sans-serif;
-	background-image: url('../assets/images/devk-bg.webp');
-	@apply bg-(--bg-hero) bg-cover bg-center bg-no-repeat h-full;
+@utility hero-bg {
+	background-image: var(--bg-hero);
+	@apply bg-cover bg-center bg-no-repeat;
 }
 
-main {
-	@apply w-full h-screen flex justify-center bg-(--color-bg) text-(--color-text);
+body {
+	@apply hero-bg h-full font-(--font-geist) text-[--color-text];
+}
+
+.pg-wrpr {
+	@apply w-full h-screen bg-[--color-bg] text-[--color-text];
 }

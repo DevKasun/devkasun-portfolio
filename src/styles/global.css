@@ -1,16 +1,34 @@
-@import './theme.css';
-@import 'tailwindcss';
-/* @import '@fontsource-variable/geist-mono'; */
+@import 'tailwindcss' layer(theme);
+@import '@fontsource-variable/geist';
+@import '@fontsource-variable/geist-mono';
+
+@theme {
+	--color-text-dark: hsl(0 0% 0% / 0.95);
+	--color-text-light: hsl(0 0% 100% / 0.95);
+	--color-bg-light: hsl(0 0% 100% / 0.9);
+	--color-bg-dark: hsl(0 0% 0% / 0.9);
+	--font-geist: 'Geist Variable', sans-serif;
+	--font-geistmono: 'Geist Mono Variable', monospace;
+	--bg-hero: url('../assets/images/devk-bg.webp');
+}
 
 @utility hero-bg {
-	background-image: var(--bg-hero);
+	background-image: theme(bg-hero);
 	@apply bg-cover bg-center bg-no-repeat;
 }
 
+@utility container {
+	@apply max-w-3xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+@utility container-full {
+	@apply w-full mx-auto px-4 sm:px-6 lg:px-8;
+}
+
 body {
-	@apply hero-bg h-full font-(--font-geist) text-[--color-text];
+	@apply hero-bg h-full font-geist leading-12 text-text-dark dark:text-text-light overflow-hidden;
 }
 
 .pg-wrpr {
-	@apply w-full h-screen bg-[--color-bg] text-[--color-text];
+	@apply w-full h-screen bg-bg-light dark:bg-bg-dark overflow-y-auto;
 }

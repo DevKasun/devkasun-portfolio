@@ -3,26 +3,118 @@ import { Image } from "astro:assets";
 import logoImage from "../assets/images/logo-red.svg";
 ---
 
-<header class="w-full">
-        <nav class="container-full py-4 font-geistmono"> 
-            <ul class="flex items-center gap-8 justify-end">
+<header class="w-full relative">
+    <nav class="container-full py-4 font-geistmono relative z-50">
+        <div class="flex items-center justify-end">
+            <button
+                id="mobile-menu-button"
+                class="md:hidden p-2 focus:outline-none focus:ring-2 focus:ring-offset-2 rounded relative z-50"
+                aria-label="Toggle menu"
+                aria-expanded="false"
+            >
+                <svg
+                    id="menu-icon"
+                    class="w-6 h-6"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M4 6h16M4 12h16M4 18h16"
+                    />
+                </svg>
+                <svg
+                    id="close-icon"
+                    class="w-6 h-6 hidden"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M6 18L18 6M6 6l12 12"
+                    />
+                </svg>
+            </button>
+            
+            <ul
+                id="desktop-menu"
+                class="hidden md:flex items-center gap-8 justify-end"
+            >
                 <li>
-                    <a href="/blog">Blog</a>
+                    <a href="/blog" class="hover:underline">Blog</a>
                 </li>
                 <li>
-                    <a href="/projects">Projects</a>
+                    <a href="/projects" class="hover:underline">Projects</a>
                 </li>
                 <li>
-                    <a href="https://github.com/DevKasun" target="_blank">Github</a>
+                    <a href="https://github.com/DevKasun" target="_blank" class="hover:underline">Github</a>
                 </li>
                 <li>
-                    <a href="https://www.youtube.com/@devkasun" target="_blank">YouTube</a>
-                </li>
-                <li>
-                    <a href="/about" target="_blank">
-                    
-                    </a>
+                    <a href="https://www.youtube.com/@devkasun" target="_blank" class="hover:underline">YouTube</a>
                 </li>
             </ul>
-        </nav>
+        </div>
+    </nav>
+    
+    <div
+        id="mobile-menu"
+        class="hidden md:hidden fixed inset-0 w-full h-screen bg-black z-40 pt-20"
+    >
+        <ul class="flex flex-col gap-6 px-4 container-full">
+            <li>
+                <a href="/blog" class="block hover:underline py-3 text-white text-lg">Blog</a>
+            </li>
+            <li>
+                <a href="/projects" class="block hover:underline py-3 text-white text-lg">Projects</a>
+            </li>
+            <li>
+                <a href="https://github.com/DevKasun" target="_blank" class="block hover:underline py-3 text-white text-lg">Github</a>
+            </li>
+            <li>
+                <a href="https://www.youtube.com/@devkasun" target="_blank" class="block hover:underline py-3 text-white text-lg">YouTube</a>
+            </li>
+        </ul>
+    </div>
 </header>
+
+<script>
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+    
+    if (mobileMenuButton && mobileMenu && menuIcon && closeIcon) {
+        mobileMenuButton.addEventListener('click', () => {
+            const isOpen = !mobileMenu.classList.contains('hidden');
+            
+            if (isOpen) {
+                mobileMenu.classList.add('hidden');
+                menuIcon.classList.remove('hidden');
+                closeIcon.classList.add('hidden');
+                mobileMenuButton.setAttribute('aria-expanded', 'false');
+            } else {
+                mobileMenu.classList.remove('hidden');
+                menuIcon.classList.add('hidden');
+                closeIcon.classList.remove('hidden');
+                mobileMenuButton.setAttribute('aria-expanded', 'true');
+            }
+        });
+        
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIcon.classList.remove('hidden');
+                closeIcon.classList.add('hidden');
+                mobileMenuButton.setAttribute('aria-expanded', 'false');
+            });
+        });
+    }
+</script>

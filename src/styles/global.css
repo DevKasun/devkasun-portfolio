@@ -7,6 +7,7 @@
 	--color-text-light: hsl(0 0% 100% / 0.95);
 	--color-bg-light: hsl(0 0% 100% / 0.9);
 	--color-bg-dark: hsl(0 0% 0% / 0.9);
+	--color-accent: hsl(266 100% 50% / 1);
 	--font-geist: 'Geist Variable', sans-serif;
 	--font-geistmono: 'Geist Mono Variable', monospace;
 	--bg-hero: url('../assets/images/devk-bg.webp');

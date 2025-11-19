@@ -30,6 +30,10 @@ body {
 	@apply hero-bg h-full font-geist leading-12 text-text-dark dark:text-text-light overflow-hidden;
 }
 
+p {
+	@apply text-base;
+}
+
 .pg-wrpr {
 	@apply w-full h-screen bg-bg-light dark:bg-bg-dark overflow-y-auto;
 }

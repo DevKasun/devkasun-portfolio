@@ -3,173 +3,34 @@ import { BLOG_SITE_TITLE, BLOG_SITE_DESCRIPTION } from '../../consts';
 import { getCollection } from 'astro:content';
 import FormattedDate from '../../components/FormattedDate.astro';
 import PageLayout from '../../layouts/PageLayout.astro';
-import { Image } from 'astro:assets';
+
 const posts = (await getCollection('blog')).sort(
- (a, b: any) => new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf()
+	(a, b: any) => new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf()
 );
-import blogCoverImage from '../../assets/images/blog-cover.png';
 ---
 
 <PageLayout title={BLOG_SITE_TITLE} description={BLOG_SITE_DESCRIPTION}>
-	<main class='about py-28'>
-		<section class='pb-14'>
-			<div class='container mx-auto px-8'>
-				<div
-					class='flex flex-col-reverse gap-8 pb-8 lg:grid lg:grid-cols-4'
-				>
-					<Image
-						class='col-span-2'
-						src={blogCoverImage}
-						width={1792}
-						height={1024}
-						alt='developer_image'
-						data-animate="blog-cover"
-					/>
-					<div class='col-span-2' data-animate="blog-hero">
-						<h2 class='text-4xl pb-6'>
-							DevBlog: Beyond the Binary
-						</h2>
-						<p class='text-lg pb-4'>
-							This blog is a space for sharing my passion for
-							technology and its power to build, create, and solve
-							problems. Whether you're a seasoned developer or
-							just starting out, you'll find valuable insights and
-							inspiration to shape your tech journey.
-						</p>
-					</div>
-				</div>
-			</div>
-		</section>
-		<section class='pb-14'>
-			<div class='container mx-auto px-8'>
-				<ul
-					class='list-none grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8'
-					data-animate="blog-posts"
-				>
-					{
-						posts.map((post) => (
-							<li data-animate="blog-post-card">
-								<a href={`/blog/${post.slug}/`}>
-									<img
-										width={720}
-										height={360}
-										src={post.data.heroImage}
-										alt=''
-									/>
-									<h4 class='title pt-4'>
-										{post.data.title}
-									</h4>
-									<p class='date text-xs pt-1'>
-										<FormattedDate
-											date={post.data.pubDate}
-										/>
-									</p>
-								</a>
-							</li>
-						))
-					}
-				</ul>
-			</div>
-		</section>
+	<main class="py-4 lg:py-28">
+		<div class="container mb-4 lg:mb-8">
+			<h1 class="text-2xl lg:text-4xl font-bold font-geistmono">Blog</h1>
+		</div>
+		<div class="container flex flex-col gap-4 font-geistmono">
+			<ul class="flex flex-col gap-6">
+				{
+					posts.map((post) => (
+						<li>
+							<a href={`/blog/${post.slug}/`} class="group flex flex-col gap-1">
+								<span class="text-base font-bold hover:bg-accent hover:text-text-light transition-colors w-fit px-1 -mx-1 rounded-sm">
+									{post.data.title}
+								</span>
+								<span class="text-sm text-gray-500">
+									<FormattedDate date={post.data.pubDate} />
+								</span>
+							</a>
+						</li>
+					))
+				}
+			</ul>
+		</div>
 	</main>
 </PageLayout>
-
-<script>
-	import { gsap } from 'gsap';
-
-	document.addEventListener('DOMContentLoaded', () => {
-		// Set initial states
-		gsap.set('[data-animate="blog-cover"]', { 
-			opacity: 0, 
-			scale: 0.9,
-			x: -50
-		});
-		
-		gsap.set('[data-animate="blog-hero"]', { 
-			opacity: 0, 
-			x: 50 
-		});
-		
-		gsap.set('[data-animate="blog-post-card"]', { 
-			opacity: 0, 
-			y: 50,
-			scale: 0.95
-		});
-
-		// Create timeline
-		const tl = gsap.timeline({ defaults: { ease: 'power2.out' } });
-
-		// Animate hero section
-		tl.to('[data-animate="blog-cover"]', {
-			opacity: 1,
-			scale: 1,
-			x: 0,
-			duration: 1,
-			ease: 'back.out(1.7)',
-		})
-		.to('[data-animate="blog-hero"]', {
-			opacity: 1,
-			x: 0,
-			duration: 0.8,
-		}, '-=0.6')
-		.to('[data-animate="blog-post-card"]', {
-			opacity: 1,
-			y: 0,
-			scale: 1,
-			duration: 0.8,
-			stagger: 0.2,
-		}, '-=0.3');
-
-		// Interactive hover effects for blog post cards
-		const blogCards = document.querySelectorAll('[data-animate="blog-post-card"]');
-		
-		blogCards.forEach(card => {
-			const link = card.querySelector('a');
-			const image = card.querySelector('img');
-			
-			if (link) {
-				link.addEventListener('mouseenter', () => {
-					gsap.to(card, {
-						y: -10,
-						duration: 0.3,
-						ease: 'power2.out'
-					});
-					
-					if (image) {
-						gsap.to(image, {
-							scale: 1.05,
-							duration: 0.3,
-							ease: 'power2.out'
-						});
-					}
-				});
-
-				link.addEventListener('mouseleave', () => {
-					gsap.to(card, {
-						y: 0,
-						duration: 0.3,
-						ease: 'power2.out'
-					});
-					
-					if (image) {
-						gsap.to(image, {
-							scale: 1,
-							duration: 0.3,
-							ease: 'power2.out'
-						});
-					}
-				});
-			}
-		});
-
-		// Subtle floating animation for blog cover
-		gsap.to('[data-animate="blog-cover"]', {
-			y: -8,
-			duration: 4,
-			ease: 'power2.inOut',
-			yoyo: true,
-			repeat: -1,
-			delay: 2
-		});
-	});
-</script>

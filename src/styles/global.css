@@ -1,136 +1,39 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss' layer(theme);
+@import '@fontsource-variable/geist';
+@import '@fontsource-variable/geist-mono';
 
-:root {
-  --foreground: #0b3536;
-  --foreground-secondary: #f54123;
-  --background: #e5e7de;
-  --font-poppins: "Poppins", sans-serif;
-  --font-slackside: "Slackside One", serif;
+@theme {
+	--color-text-dark: hsl(0 0% 0% / 0.95);
+	--color-text-light: hsl(0 0% 100% / 0.95);
+	--color-bg-light: hsl(0 0% 100% / 0.9);
+	--color-bg-dark: hsl(0 0% 0% / 0.9);
+	--color-accent: hsl(266 100% 50% / 1);
+	--font-geist: 'Geist Variable', sans-serif;
+	--font-geistmono: 'Geist Mono Variable', monospace;
+	--bg-hero: url('../assets/images/devk-bg.webp');
 }
 
-/* @media (prefers-color-scheme: dark) {
-:root {
-  --foreground-rgb: 255, 255, 255;
-  --background-start-rgb: 0, 0, 0;
-  --background-end-rgb: 0, 0, 0;
-}
-} */
-
-@font-face {
-  font-family: "Poppins";
-  src: url("../fonts/poppins/Poppins-Regular.woff2") format("woff2"),
-    url("../fonts/poppins/Poppins-Regular.woff") format("woff");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
+@utility hero-bg {
+	background-image: theme(bg-hero);
+	@apply bg-cover bg-center bg-no-repeat;
 }
 
-@font-face {
-  font-family: "Poppins";
-  src: url("../fonts/poppins/Poppins-Italic.woff2") format("woff2"),
-    url("../fonts/poppins/Poppins-Italic.woff") format("woff");
-  font-weight: normal;
-  font-style: italic;
-  font-display: swap;
+@utility container {
+	@apply max-w-3xl mx-auto px-4 sm:px-6 lg:px-8;
 }
 
-@font-face {
-  font-family: "Poppins";
-  src: url("../fonts/poppins/Poppins-Medium.woff2") format("woff2"),
-    url("../fonts/poppins/Poppins-Medium.woff") format("woff");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Poppins";
-  src: url("../fonts/poppins/Poppins-SemiBold.woff2") format("woff2"),
-    url("../fonts/poppins/Poppins-SemiBold.woff") format("woff");
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Poppins";
-  src: url("../fonts/poppins/Poppins-Bold.woff2") format("woff2"),
-    url("../fonts/poppins/Poppins-Bold.woff") format("woff");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Slackside";
-  src: url("../fonts/slackside/SlacksideOne-Regular.woff2") format("woff2"),
-    url("../fonts/slackside/SlacksideOne-Regular.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-html {
-  scroll-behavior: smooth;
+@utility container-full {
+	@apply w-full mx-auto px-4 sm:px-6 lg:px-8;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: var(--font-poppins);
-  font-weight: 400;
+	@apply hero-bg h-full font-geist leading-12 text-text-dark dark:text-text-light overflow-hidden;
 }
 
-main {
-  min-height: calc(100% - 124px);
+p {
+	@apply text-base;
 }
 
-.blog-title h1 {
-  font-size: 2rem;
-  font-weight: 600;
-}
-
-.blog-content p {
-  margin-bottom: 1rem;
-}
-
-.blog-content strong {
-  font-weight: 600;
-}
-
-.blog-content h2 {
-  font-size: 1.25rem;
-  margin-bottom: 1rem;
-  font-weight: bold;
-}
-
-.blog-content h3 {
-  font-size: 1.125rem;
-  margin-bottom: 1rem;
-  font-weight: bold;
-}
-
-.blog-content ul {
-  list-style: disc;
-  margin-left: 1rem;
-  padding-left: 1rem;
-  margin-bottom: 1rem;
-}
-
-.blog-content pre {
-  padding: 1rem;
-  margin-bottom: 1rem;
-  border-radius: 0.625rem;
-}
-
-.blog-content a {
-  font-weight: 500;
-  color: #f54123;
-  text-decoration: underline;
-}
-
-.tech-stack {
-  @apply p-1 px-2 m-1 text-sm bg-kgreen opacity-50 hover:opacity-100 transition-opacity ease-in-out text-kwhite rounded-md cursor-pointer duration-300;
+.pg-wrpr {
+	@apply w-full h-screen bg-bg-light dark:bg-bg-dark overflow-y-auto;
 }

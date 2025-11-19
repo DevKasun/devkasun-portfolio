@@ -1,18 +1,20 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
 const { title, description } = Astro.props;
-import Analytics from '@vercel/analytics/astro';
+import Analytics from "@vercel/analytics/astro";
 ---
 
 <!doctype html>
-<html lang='en' class='min-h-full'>
-	<head>
-		<BaseHead title={title} description={description} />
-	</head>
-	<body class='h-screen'>
-		<Header />
-		<slot />
-		<Analytics />
-	</body>
+<html lang="en" class='min-h-full'>
+    <head>
+        <BaseHead title={title} description={description} />
+    </head>
+    <body>
+        <div class="pg-wrpr overflow-auto">
+            <Header />
+            <slot />
+        </div>
+        <Analytics />
+    </body>
 </html>

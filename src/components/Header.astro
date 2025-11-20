@@ -1,6 +1,14 @@
 ---
 import { Image } from "astro:assets";
 import logoImage from "../assets/images/logo-red.svg";
+const pathname = Astro.url.pathname;
+const links = [
+    { href: "/", label: "Home" },
+    { href: "/blog", label: "Blog" },
+    { href: "/projects", label: "Projects" },
+    { href: "https://github.com/DevKasun", label: "Github" },
+    { href: "https://www.youtube.com/@devkasun", label: "YouTube" },
+];
 ---
 
 <header class="w-full relative">
@@ -46,23 +54,13 @@ import logoImage from "../assets/images/logo-red.svg";
             
             <ul
                 id="desktop-menu"
-                class="hidden md:flex items-center gap-8 justify-end"
+                class="hidden md:flex items-center gap-4 justify-end"
             >
-                <li>
-                    <a href="/" class="hover:underline">Home</a>
-                </li>
-                <li>
-                    <a href="/blog" class="hover:underline">Blog</a>
-                </li>
-                <li>
-                    <a href="/projects" class="hover:underline">Projects</a>
-                </li>
-                <li>
-                    <a href="https://github.com/DevKasun" target="_blank" class="hover:underline">Github</a>
-                </li>
-                <li>
-                    <a href="https://www.youtube.com/@devkasun" target="_blank" class="hover:underline">YouTube</a>
-                </li>
+                {links.map((link) => (
+                    <li>
+                        <a href={link.href} class={pathname === link.href ? "bg-accent p-1" : "hover:underline p-1"}>{link.label}</a>
+                    </li>
+                ))}
             </ul>
         </div>
     </nav>

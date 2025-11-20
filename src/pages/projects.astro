@@ -1,0 +1,17 @@
+---
+import PageLayout from "../layouts/PageLayout.astro";
+import { getCollection } from 'astro:content';
+
+
+const posts = (await getCollection('blog')).sort(
+	(a, b: any) => new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf()
+);
+---
+
+<PageLayout title="Projects" description="My projects">
+	<main class="py-8 pb-32">
+		<div class="container mb-4 lg:mb-8">
+			<h1 class="text-2xl lg:text-4xl font-bold font-geistmono">Projects</h1>
+		</div>
+	</main>
+</PageLayout>

@@ -3,11 +3,11 @@ import { Image } from "astro:assets";
 import logoImage from "../assets/images/logo-red.svg";
 const pathname = Astro.url.pathname;
 const links = [
-    { href: "/", label: "Home" },
-    { href: "/blog", label: "Blog" },
-    { href: "/projects", label: "Projects" },
-    { href: "https://github.com/DevKasun", label: "Github" },
-    { href: "https://www.youtube.com/@devkasun", label: "YouTube" },
+    { href: "/", label: "Home", newTab: false },
+    { href: "/blog", label: "Blog", newTab: false },
+    { href: "/projects", label: "Projects", newTab: false },
+    { href: "https://github.com/DevKasun", label: "Github", newTab: true },
+    { href: "https://www.youtube.com/@devkasun", label: "YouTube", newTab: true },
 ];
 ---
 
@@ -58,7 +58,7 @@ const links = [
             >
                 {links.map((link) => (
                     <li>
-                        <a href={link.href} class={pathname === link.href ? "bg-accent p-1" : "hover:underline p-1"}>{link.label}</a>
+                        <a href={link.href} class={pathname === link.href ? "bg-accent p-1" : "hover:underline p-1"} target={link.newTab ? "_blank" : undefined}>{link.label}</a>
                     </li>
                 ))}
             </ul>

@@ -1,39 +1,39 @@
-@import 'tailwindcss' layer(theme);
-@import '@fontsource-variable/geist';
-@import '@fontsource-variable/geist-mono';
+@import "tailwindcss" layer(theme);
+@import "@fontsource-variable/geist";
+@import "@fontsource-variable/geist-mono";
 
 @theme {
-	--color-text-dark: hsl(0 0% 0% / 0.95);
-	--color-text-light: hsl(0 0% 100% / 0.95);
-	--color-bg-light: hsl(0 0% 100% / 0.9);
-	--color-bg-dark: hsl(0 0% 0% / 0.9);
-	--color-accent: hsl(266 100% 50% / 1);
-	--font-geist: 'Geist Variable', sans-serif;
-	--font-geistmono: 'Geist Mono Variable', monospace;
-	--bg-hero: url('../assets/images/devk-bg.webp');
+    --color-text-dark: hsl(0 0% 0% / 0.95);
+    --color-text-light: hsl(0 0% 100% / 0.95);
+    --color-bg-light: hsl(0 0% 100% / 0.9);
+    --color-bg-dark: hsl(0 0% 0% / 0.9);
+    --color-accent: hsl(266 100% 50% / 1);
+    --font-geist: "Geist Variable", sans-serif;
+    --font-geistmono: "Geist Mono Variable", monospace;
+    --bg-hero: url("../assets/images/devk-bg.webp");
 }
 
 @utility hero-bg {
-	background-image: theme(bg-hero);
-	@apply bg-cover bg-center bg-no-repeat;
+    background-image: theme(bg-hero);
+    @apply bg-cover bg-center bg-no-repeat;
 }
 
 @utility container {
-	@apply max-w-3xl mx-auto px-4 sm:px-6 lg:px-8;
+    @apply max-w-3xl mx-auto px-4 sm:px-6 lg:px-8;
 }
 
 @utility container-full {
-	@apply w-full mx-auto px-4 sm:px-6 lg:px-8;
+    @apply w-full mx-auto px-4 sm:px-6 lg:px-8;
 }
 
 body {
-	@apply hero-bg h-full font-geist leading-12 text-text-dark dark:text-text-light overflow-hidden;
+    @apply hero-bg h-full font-geist leading-12 text-text-dark dark:text-text-light overflow-hidden;
 }
 
 p {
-	@apply text-base;
+    @apply text-base;
 }
 
 .pg-wrpr {
-	@apply w-full h-screen bg-bg-light dark:bg-bg-dark overflow-y-auto;
+    @apply w-full h-screen bg-bg-light dark:bg-bg-dark overflow-y-auto;
 }

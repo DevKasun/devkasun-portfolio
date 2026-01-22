@@ -69,22 +69,12 @@ const links = [
         id="mobile-menu"
         class="hidden md:hidden fixed inset-0 w-full h-screen bg-black z-40 pt-20"
     >
-        <ul class="flex flex-col gap-6 px-4 container-full">
-        <li>
-                <a href="/" class="block hover:underline py-3 text-white text-lg">Home</a>
-            </li>
-            <li>
-                <a href="/blog" class="block hover:underline py-3 text-white text-lg">Blog</a>
-            </li>
-            <li>
-                <a href="/projects" class="block hover:underline py-3 text-white text-lg">Projects</a>
-            </li>
-            <li>
-                <a href="https://github.com/DevKasun" target="_blank" class="block hover:underline py-3 text-white text-lg">Github</a>
-            </li>
-            <li>
-                <a href="https://www.youtube.com/@devkasun" target="_blank" class="block hover:underline py-3 text-white text-lg">YouTube</a>
-            </li>
+        <ul class="flex flex-col gap-2 px-4 container-full">
+            {links.map((link) => (
+                <li>
+                    <a href={link.href} class={pathname === link.href ? "bg-accent p-1" : "hover:underline p-1"} target={link.newTab ? "_blank" : undefined}>{link.label}</a>
+                </li>
+            ))}
         </ul>
     </div>
 </header>

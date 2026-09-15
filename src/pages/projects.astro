@@ -3,7 +3,7 @@ import PageLayout from "../layouts/PageLayout.astro";
 import { getCollection } from "astro:content";
 
 const posts = (await getCollection("blog")).sort(
-    (a, b: any) =>
+    (a: { data: { pubDate: string } }, b: { data: { pubDate: string } }) =>
         new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf(),
 );
 ---
@@ -16,12 +16,20 @@ const posts = (await getCollection("blog")).sort(
             </h1>
 
             <ul class="mt-8 flex flex-col gap-2">
-                <li class="leading-none">
+                <li>
                     <a
                         href="https://json-to-what.vercel.app/"
                         target="_blank"
                         class="p-1 rounded-sm underline transition-colors delay-300 ease-in-out hover:bg-accent"
-                        >Json to What</a
+                        >Json To What</a
+                    >
+                </li>
+                <li>
+                    <a
+                        href="https://idk-web-dev.vercel.app/"
+                        target="_blank"
+                        class="p-1 rounded-sm underline transition-colors delay-300 ease-in-out hover:bg-accent"
+                        >IDK Web Dev</a
                     >
                 </li>
             </ul>

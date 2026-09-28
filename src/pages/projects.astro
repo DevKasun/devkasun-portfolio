@@ -1,11 +1,5 @@
 ---
 import PageLayout from "../layouts/PageLayout.astro";
-import { getCollection } from "astro:content";
-
-const posts = (await getCollection("blog")).sort(
-    (a: { data: { pubDate: Date } }, b: { data: { pubDate: Date } }) =>
-        new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf(),
-);
 ---
 
 <PageLayout title="Projects" description="My projects">

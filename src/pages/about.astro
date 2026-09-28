@@ -209,12 +209,10 @@ import { ABOUT_SITE_TITLE, ABOUT_SITE_DESCRIPTION } from "../consts";
                 threshold: 0.15
             };
 
-            const observer = new IntersectionObserver((entries, observer) => {
+            const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('visible');
-                        // Optional: unobserve if you only want it to animate once
-                        // observer.unobserve(entry.target); 
                     }
                 });
             }, observerOptions);

@@ -22,4 +22,5 @@ pnpm-debug.log*
 
 .vscode/
 .vercel
+.wrangler/
 .env*
